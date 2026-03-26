@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dikss4lhjyr5t"]
 
 [ext_resource type="Script" uid="uid://df8cogc5vfkq6" path="res://playerCharacter/character.gd" id="1_bli80"]
+[ext_resource type="Script" uid="uid://cw37j8o5jkvl3" path="res://playerCharacter/lantern.gd" id="2_7f6i5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_to3e8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_to3e8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e0db6"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=194776046]
 script = ExtResource("1_bli80")
@@ -17,3 +20,15 @@ shape = SubResource("CapsuleShape3D_to3e8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2124359531]
 mesh = SubResource("CapsuleMesh_to3e8")
+
+[node name="Lantern" type="Node3D" parent="." unique_id=1691315242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5641259, 0, -1.4269377)
+script = ExtResource("2_7f6i5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lantern" unique_id=1634392507]
+transform = Transform3D(0.297, 0, 0, 0, 0.2, 0, 0, 0, 0.297, 0, 0, 0)
+mesh = SubResource("CylinderMesh_e0db6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lantern" unique_id=1276087575]
+light_color = Color(1, 0.7882353, 0.5137255, 1)
+light_energy = 4.0
