@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dtsr1sipecr5w"]
+
+[ext_resource type="PackedScene" uid="uid://bnreu7qqhh4sb" path="res://assets/mapAssets/testPlatform/testPlatform.tscn" id="1_60hww"]
+
+[node name="TestMap" type="Node3D" unique_id=609011090]
+
+[node name="TestPlatform" parent="." unique_id=1252000107 instance=ExtResource("1_60hww")]
+size = Vector2(100, 100)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=471221399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.205544, 0.03064537)
+shadow_enabled = true
+omni_range = 185.253
+omni_attenuation = 0.284

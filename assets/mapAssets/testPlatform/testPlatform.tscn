@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bnreu7qqhh4sb"]
+
+[ext_resource type="Script" uid="uid://bo6njf4q6mwrg" path="res://assets/mapAssets/testPlatform/test_platform.gd" id="1_fqwg3"]
+[ext_resource type="Shader" uid="uid://biv7kkpqwkjbh" path="res://assets/mapAssets/testPlatform/test_grid.gdshader" id="2_lcb7r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lcb7r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pke1c"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qybwi"]
+render_priority = 0
+shader = ExtResource("2_lcb7r")
+shader_parameter/color_light = Color(0.7, 0.7, 0.7, 1)
+shader_parameter/color_dark = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.05
+shader_parameter/square_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6upvc"]
+render_priority = 0
+shader = ExtResource("2_lcb7r")
+shader_parameter/color_light = Color(0.7, 0.7, 0.7, 1)
+shader_parameter/color_dark = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.05
+shader_parameter/square_size = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6upvc"]
+material = SubResource("ShaderMaterial_6upvc")
+size = Vector2(100, 100)
+
+[node name="TestPlatform" type="Node3D" unique_id=1252000107]
+script = ExtResource("1_fqwg3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1254696772]
+physics_material_override = SubResource("PhysicsMaterial_lcb7r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1821389454]
+shape = SubResource("BoxShape3D_pke1c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1228597403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0069852173, 0.006791979, -0.00036147237)
+material_override = SubResource("ShaderMaterial_qybwi")
+mesh = SubResource("PlaneMesh_6upvc")
