@@ -1,9 +1,9 @@
 extends CharacterBody3D
 @export_category("Movement")
-@export var acceleration = 10.0
-@export var deceleration = 15.0
-@export var topSpeed = 100.0
-@export var jumpVelocity = 4.5
+@export var acceleration : float = 10.0
+@export var deceleration : float = 15.0
+@export var topSpeed : float = 100.0
+@export var jumpVelocity : float = 4.5
 @export_category("Camera Settings")
 @export var FOV : float = 75
 @export var TILT_LOWER_LIMIT : float = -90
@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var MOUSE_SENSITIVITY : float = 0.5
 
 
-@onready var CAMERA_CONTROLLER = $Camera3D
+@onready var CAMERA_CONTROLLER = $Neck/Camera3D
 
 var _yaw_input : float #Camera left and right
 var _pitch_input : float #Camera up and down
@@ -40,18 +40,24 @@ func move(delta) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jumpVelocity
 
-	# Get the input direction and handle the movement/deceleration.
+	# Get the input direction
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	# Isolate our X/Z movement from our Y (gravity/jump) movement
+	var current_xz := Vector3(velocity.x, 0, velocity.z)
+	var target_xz : Vector3 = direction * topSpeed
+	
 	if direction:
-		# FIX: Start from velocity.x/z, not direction.x/z
-		velocity.x = move_toward(velocity.x, direction.x * topSpeed, acceleration * delta)
-		velocity.z = move_toward(velocity.z, direction.z * topSpeed, acceleration * delta)
+		# Accelerate the vector as a whole
+		current_xz = current_xz.move_toward(target_xz, acceleration * delta)
 	else:
-		# FIX: Multiply deceleration by delta for framerate independence
-		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
-		velocity.z = move_toward(velocity.z, 0, deceleration * delta)
+		# Decelerate the vector as a whole
+		current_xz = current_xz.move_toward(Vector3.ZERO, deceleration * delta)
+		
+	# Apply the newly calculated X/Z values back to the actual velocity
+	velocity.x = current_xz.x
+	velocity.z = current_xz.z
 
 func updateCamera(delta) -> void:
 	rotate_y(deg_to_rad(_yaw_input))

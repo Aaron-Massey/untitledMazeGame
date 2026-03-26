@@ -11,12 +11,14 @@
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=194776046]
 script = ExtResource("1_bli80")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1477866470]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56502163, -0.40261674)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1377346651]
 shape = SubResource("CapsuleShape3D_to3e8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2124359531]
 mesh = SubResource("CapsuleMesh_to3e8")
 skin = SubResource("Skin_bli80")
+
+[node name="Neck" type="Node3D" parent="." unique_id=1537694906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=1477866470]
