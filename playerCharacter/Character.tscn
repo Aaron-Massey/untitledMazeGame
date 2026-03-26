@@ -10,9 +10,6 @@
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=194776046]
 script = ExtResource("1_bli80")
-acceleration = 100.0
-deceleration = 135.0
-topSpeed = 1000.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1477866470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56502163, -0.40261674)
