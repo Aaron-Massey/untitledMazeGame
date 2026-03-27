@@ -3,10 +3,28 @@
 [ext_resource type="PackedScene" uid="uid://dtsr1sipecr5w" path="res://assets/maps/testMap.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://playerCharacter/Character.tscn" id="2_a0tk4"]
 
+[sub_resource type="Environment" id="Environment_0xm2m"]
+fog_mode = 1
+fog_light_color = Color(0.99607843, 0.84313726, 0.6117647, 1)
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.4
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_h2yge"]
+
 [node name="Main" type="Node3D" unique_id=1523194918]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=337862349]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="CharacterBody3D" parent="." unique_id=194776046 instance=ExtResource("2_a0tk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9676371, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1443258441]
+environment = SubResource("Environment_0xm2m")
+camera_attributes = SubResource("CameraAttributesPractical_h2yge")
 
 [node name="TestMap" parent="." unique_id=609011090 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06508255, 0, 0.021953583)
