@@ -9,7 +9,8 @@
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 deceleration = 27.0
-top_speed = 30.0
+top_speed = 10.0
+stamina_idle_recovery_multiplier = 1.5
 mouse_sensitivity = 0.1
 
 [node name="TestMap" parent="." unique_id=609011090 instance=ExtResource("2_0xm2m")]
