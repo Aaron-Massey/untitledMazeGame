@@ -2,7 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://bnreu7qqhh4sb" path="res://assets/mapAssets/testPlatform/testPlatform.tscn" id="1_60hww"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
+
+[sub_resource type="Sky" id="Sky_aho1l"]
+sky_material = SubResource("ProceduralSkyMaterial_60hww")
+
+[sub_resource type="Environment" id="Environment_60hww"]
+sky = SubResource("Sky_aho1l")
+ambient_light_source = 3
+ambient_light_color = Color(0.9340804, 0.9340805, 0.93408036, 1)
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aho1l"]
+
+[sub_resource type="Compositor" id="Compositor_njq04"]
+
 [node name="TestMap" type="Node3D" unique_id=609011090]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=250959903]
+environment = SubResource("Environment_60hww")
+camera_attributes = SubResource("CameraAttributesPractical_aho1l")
+compositor = SubResource("Compositor_njq04")
 
 [node name="TestPlatform" parent="." unique_id=1252000107 instance=ExtResource("1_60hww")]
 size = Vector2(100, 100)
