@@ -24,6 +24,7 @@ corner_radius_bottom_left = 4
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=194776046]
 script = ExtResource("1_bli80")
+sprint_toggle_mode = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1377346651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

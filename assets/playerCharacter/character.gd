@@ -33,6 +33,8 @@ extends CharacterBody3D
 @export var sprint_speed: float = 14.0
 ## How quickly the character accelerates when starting to sprint
 @export var sprint_acceleration: float = 60.0
+## If true, sprint input toggles on/off. If false, sprint must be held.
+@export var sprint_toggle_mode: bool = false
 ## The maximum stamina the character can have
 @export var max_stamina: float = 100.0
 ## The rate at which stamina drains while sprinting (units per second)
@@ -59,6 +61,8 @@ var current_stamina: float = 100.0
 var is_sprinting: bool = false
 ## Whether the character is exhausted and cannot sprint
 var is_exhausted: bool = false
+## Tracks the sprint toggle state when sprint_toggle_mode is enabled
+var sprint_toggled_on: bool = false
 ## Accumulated yaw input from mouse movement for horizontal rotation
 var _yaw_input: float
 ## Accumulated pitch input from mouse movement for vertical rotation
@@ -106,7 +110,13 @@ func move(delta: float) -> void:
 	elif current_stamina >= 20.0:
 		is_exhausted = false
 
-	if Input.is_action_pressed("move_sprint") and direction != Vector3.ZERO and not is_exhausted:
+	if sprint_toggle_mode:
+		if Input.is_action_just_pressed("move_sprint"):
+			sprint_toggled_on = not sprint_toggled_on
+	else:
+		sprint_toggled_on = Input.is_action_pressed("move_sprint")
+
+	if sprint_toggled_on and direction != Vector3.ZERO and not is_exhausted:
 		is_sprinting = true
 	else:
 		is_sprinting = false
