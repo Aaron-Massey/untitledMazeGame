@@ -21,6 +21,7 @@ extends CharacterBody3D
 @export var tilt_upper_limit: float = 90.0
 @export var mouse_sensitivity: float = 0.5
 
+# Standard variables come before @onready variables
 var current_stamina: float = 100.0
 var is_sprinting: bool = false
 var is_exhausted: bool = false
