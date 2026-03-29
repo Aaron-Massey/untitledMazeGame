@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="3D test"
+config/name="untitledMazeGame"
 run/main_scene="uid://ddf3rnkg4j1ua"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -88,3 +88,8 @@ contain_mouse={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[vimdow]
+
+path_to_nvim="C:\\Users\\raise\\scoop\\apps\\neovim\\0.11.5\\bin\\nvim.exe"
+experimental/pop_out=false
