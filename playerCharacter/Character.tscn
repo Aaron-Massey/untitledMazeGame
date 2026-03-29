@@ -22,3 +22,5 @@ skin = SubResource("Skin_bli80")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck" unique_id=1477866470]
+visibility_parent = NodePath("../../MeshInstance3D")
+cull_mask = 1048573

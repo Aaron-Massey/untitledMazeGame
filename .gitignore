@@ -1,3 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
+!res://.godot/uid_cache.bin
+
+# Godot 3 specific ignores (if you are on older versions)
+.import/
+export.cfg
+export_presets.cfg
+
+# OS generated files
+.DS_Store
+Thumbs.db
