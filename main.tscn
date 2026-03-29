@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ddf3rnkg4j1ua"]
 
-[ext_resource type="Script" uid="uid://bdl0blcbpcuix" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dtsr1sipecr5w" path="res://assets/maps/testMap.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://playerCharacter/Character.tscn" id="2_a0tk4"]
 
