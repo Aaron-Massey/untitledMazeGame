@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bbo5kbmdceuvg"]
+
+[ext_resource type="Script" uid="uid://cxwfrigvjvecu" path="res://assets/UI/ui_(non_interactive).gd" id="1_gw2ga"]
+[ext_resource type="Theme" uid="uid://bgw7k3pc20t16" path="res://assets/mainColorTheme.tres" id="2_uajae"]
+[ext_resource type="Script" uid="uid://hfcqiiq1bjpc" path="res://assets/UI/stamina_bar.gd" id="3_dr0of"]
+
+[node name="UI (NON-INTERACTIVE)" type="CanvasLayer" unique_id=1016864372]
+editor_description = "UI elements that the mouse can't interact with"
+script = ExtResource("1_gw2ga")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1151996093]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_uajae")
+
+[node name="Crosshair" type="Panel" parent="CenterContainer" unique_id=1794111118]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_uajae")
+theme_type_variation = &"Crosshair"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1501503273]
+custom_minimum_size = Vector2(0, 196)
+offset_right = 40.0
+offset_bottom = 256.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="StaminaBar" type="ProgressBar" parent="MarginContainer" unique_id=651585898]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 2
+theme = ExtResource("2_uajae")
+theme_type_variation = &"StaminaBar"
+value = 100.0
+rounded = true
+fill_mode = 2
+script = ExtResource("3_dr0of")
