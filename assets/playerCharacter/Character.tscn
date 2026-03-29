@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dikss4lhjyr5t"]
 
 [ext_resource type="Script" uid="uid://df8cogc5vfkq6" path="res://assets/playerCharacter/character.gd" id="1_bli80"]
-[ext_resource type="Script" uid="uid://cxwfrigvjvecu" path="res://assets/playerCharacter/ui_(non_interactive).gd" id="2_kvk7c"]
+[ext_resource type="PackedScene" uid="uid://bbo5kbmdceuvg" path="res://assets/UI/ui_(non_interactive).tscn" id="2_kvk7c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_to3e8"]
 
@@ -9,22 +9,8 @@
 
 [sub_resource type="Skin" id="Skin_bli80"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37xui"]
-bg_color = Color(1, 1, 1, 1)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=194776046]
 script = ExtResource("1_bli80")
-sprint_toggle_mode = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1377346651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -47,19 +33,4 @@ cull_mask = 1048573
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1, 0)
 target_position = Vector3(0, 0, -2.5)
 
-[node name="UI (NON-INTERACTIVE)" type="CanvasLayer" parent="." unique_id=1821589918]
-script = ExtResource("2_kvk7c")
-
-[node name="CenterContainer" type="CenterContainer" parent="UI (NON-INTERACTIVE)" unique_id=1737496788]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Panel" type="Panel" parent="UI (NON-INTERACTIVE)/CenterContainer" unique_id=1983277793]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_37xui")
+[node name="UI (NON-INTERACTIVE)" parent="." unique_id=1016864372 instance=ExtResource("2_kvk7c")]

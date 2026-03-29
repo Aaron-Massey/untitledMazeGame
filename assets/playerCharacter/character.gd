@@ -29,8 +29,8 @@ extends CharacterBody3D
 @export var turn_friction: float = 3.0
 
 @export_category("Sprint & Stamina")
-## The speed the character moves at while sprinting
-@export var sprint_speed: float = 14.0
+## Multiplier applied to top_speed when sprinting (e.g., 1.5 = 50% faster)
+@export var sprint_speed_multiplier: float = 1.5
 ## How quickly the character accelerates when starting to sprint
 @export var sprint_acceleration: float = 60.0
 ## If true, sprint input toggles on/off. If false, sprint must be held.
@@ -41,8 +41,8 @@ extends CharacterBody3D
 @export var stamina_drain_rate: float = 25.0
 ## The rate at which stamina recovers while walking (units per second)
 @export var stamina_walk_recovery_rate: float = 10.0
-## The rate at which stamina recovers while idle (units per second)
-@export var stamina_idle_recovery_rate: float = 35.0
+## Multiplier applied to stamina_walk_recovery_rate when idle (e.g., 3.5 = 3.5x faster)
+@export var stamina_idle_recovery_multiplier: float = 3.5
 
 @export_category("Camera Settings")
 ## The field of view for the camera in degrees
@@ -102,8 +102,8 @@ func move(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
-	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if current_stamina <= 0.0:
 		is_exhausted = true
@@ -123,21 +123,27 @@ func move(delta: float) -> void:
 
 	update_stamina(delta)
 
-	var active_speed := sprint_speed if is_sprinting else top_speed
-	var active_accel := sprint_acceleration if is_sprinting else acceleration
+	var sprint_speed: float = top_speed * sprint_speed_multiplier
+	var active_speed: float = sprint_speed if is_sprinting else top_speed
+	var active_accel: float = sprint_acceleration if is_sprinting else acceleration
 
-	var current_xz := Vector3(velocity.x, 0, velocity.z)
+	var current_xz: Vector3 = Vector3(velocity.x, 0, velocity.z)
 	var target_xz: Vector3 = direction * active_speed
 
 	if direction:
-		var accel_multiplier := 1.0
+		var accel_multiplier: float = 1.0
+		var speed_change_rate: float = active_accel
+
+		# Use deceleration when reducing speed from sprint to walk while input is held.
+		if not is_sprinting and current_xz.length() > target_xz.length():
+			speed_change_rate = deceleration
 
 		if current_xz.length() > 0.5:
-			var momentum_alignment := direction.dot(current_xz.normalized())
+			var momentum_alignment: float = direction.dot(current_xz.normalized())
 			if momentum_alignment < 0.9:
 				accel_multiplier = turn_friction
 
-		current_xz = current_xz.move_toward(target_xz, active_accel * accel_multiplier * delta)
+		current_xz = current_xz.move_toward(target_xz, speed_change_rate * accel_multiplier * delta)
 	else:
 		current_xz = current_xz.move_toward(Vector3.ZERO, deceleration * delta)
 
@@ -152,7 +158,10 @@ func update_stamina(delta: float) -> void:
 	elif velocity.length() > 0.1:
 		current_stamina += stamina_walk_recovery_rate * delta
 	else:
-		current_stamina += stamina_idle_recovery_rate * delta
+		var idle_recovery_rate: float = (
+			stamina_walk_recovery_rate * stamina_idle_recovery_multiplier
+		)
+		current_stamina += idle_recovery_rate * delta
 
 	current_stamina = clamp(current_stamina, 0.0, max_stamina)
 
@@ -162,8 +171,8 @@ func update_camera() -> void:
 	rotate_y(deg_to_rad(_yaw_input))
 	camera_controller.rotate_x(deg_to_rad(_pitch_input))
 
-	var lower_limit := deg_to_rad(tilt_lower_limit)
-	var upper_limit := deg_to_rad(tilt_upper_limit)
+	var lower_limit: float = deg_to_rad(tilt_lower_limit)
+	var upper_limit: float = deg_to_rad(tilt_upper_limit)
 	camera_controller.rotation.x = clamp(camera_controller.rotation.x, lower_limit, upper_limit)
 
 	_yaw_input = 0.0
