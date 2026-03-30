@@ -12,11 +12,18 @@ func interact() -> void:
 	# Toggle the state
 	active = not active
 
+	# Create a tween for the rotation animation
+	var tween = create_tween()
+
 	# Set the angle based on the state
-	if active:
-		lever_pivot.rotation_degrees.z = -40.0
-	else:
-		lever_pivot.rotation_degrees.z = 40.0
+	var target_rotation: float = 40.0 if active else -40.0
+
+	(
+		tween
+		. tween_property(lever_pivot, "rotation_degrees:z", target_rotation, lever_speed)
+		. set_trans(Tween.TRANS_QUAD)
+		. set_ease(Tween.EASE_IN_OUT)
+	)
 
 	# Send a debug print
 	print("Lever is now: ", "ON" if active else "OFF")
