@@ -96,6 +96,7 @@ interact={
 3d_render/layer_1="Base Layer"
 3d_render/layer_2="Player"
 3d_render/layer_4="Interactables"
+3d_render/layer_5="Doors"
 3d_physics/layer_4="Interactables"
 
 [physics]

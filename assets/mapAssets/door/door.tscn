@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://jdidct1uybph"]
+
+[ext_resource type="Script" uid="uid://cju5m288jo4y5" path="res://assets/mapAssets/door/door.gd" id="1_mspgx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_umnb1"]
+size = Vector3(2, 2.5, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cycew"]
+size = Vector3(2, 2.5, 0.3)
+
+[node name="Door" type="StaticBody3D" unique_id=1253411669]
+script = ExtResource("1_mspgx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1033317306]
+layers = 16
+mesh = SubResource("BoxMesh_umnb1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2045535489]
+shape = SubResource("BoxShape3D_cycew")
