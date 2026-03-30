@@ -1,29 +1,32 @@
 extends Node3D
 
+signal toggled(is_active: bool)
+
 const LEVER_BOUNDS: Vector2 = Vector2(-35.0, 35.0)
 
-@export var lever_speed: float = 0.5  ## Time in seconds for the animation
+@export var lever_speed: float = 0.5
 @export var active: bool = false
+
+var _tween: Tween
 
 @onready var lever_pivot: Node3D = $Base/ArmPivot
 
 
 func interact() -> void:
-	# Toggle the state
 	active = not active
+	toggled.emit(active)
 
-	# Create a tween for the rotation animation
-	var tween = create_tween()
+	if _tween:
+		_tween.kill()
 
-	# Set the angle based on the state
-	var target_rotation: float = 40.0 if active else -40.0
+	_tween = create_tween()
+	var target_rotation: float = LEVER_BOUNDS.y if active else LEVER_BOUNDS.x
 
 	(
-		tween
+		_tween
 		. tween_property(lever_pivot, "rotation_degrees:z", target_rotation, lever_speed)
 		. set_trans(Tween.TRANS_QUAD)
 		. set_ease(Tween.EASE_IN_OUT)
 	)
 
-	# Send a debug print
-	print("Lever is now: ", "ON" if active else "OFF")
+	print("Lever signal emitted: ", active)
