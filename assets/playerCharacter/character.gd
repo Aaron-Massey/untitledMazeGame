@@ -225,8 +225,9 @@ func test_interaction() -> Object:
 				return collider
 
 			# 2. Check if the PARENT has the method
-			if collider.get_parent().has_method("interact"):
-				collider.get_parent().interact()
-				return collider.get_parent()
+			var parent = collider.get_parent()
+			if parent and parent.has_method("interact"):
+				parent.interact()
+				return parent
 
 	return null
