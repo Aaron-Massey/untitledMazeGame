@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://scmbowdyjl8c"]
 
+[ext_resource type="PackedScene" uid="uid://fdpkeqv26v4e" path="res://assets/mapAssets/buildingBlocks/floor.tscn" id="1_lfbpo"]
+[ext_resource type="PackedScene" uid="uid://di8vy62yy51wn" path="res://assets/mapAssets/buildingBlocks/cornerPillar.tscn" id="2_uh0ji"]
+
 [node name="+Path" type="Node3D" unique_id=897187955]
+
+[node name="Floor" parent="." unique_id=1535853046 instance=ExtResource("1_lfbpo")]
+
+[node name="CornerPillar" parent="." unique_id=206425455 instance=ExtResource("2_uh0ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CornerPillar2" parent="." unique_id=1609266109 instance=ExtResource("2_uh0ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="CornerPillar3" parent="." unique_id=810913301 instance=ExtResource("2_uh0ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="CornerPillar4" parent="." unique_id=1687448613 instance=ExtResource("2_uh0ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
