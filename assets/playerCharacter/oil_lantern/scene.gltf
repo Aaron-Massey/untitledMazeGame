@@ -1,0 +1,424 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1762,
+      "max": [
+        1.5730599164962769,
+        1.2409931421279907,
+        17.451204299926758
+      ],
+      "min": [
+        -1.6089919805526733,
+        -1.2409931421279907,
+        -1.1574231386184692
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 21144,
+      "componentType": 5126,
+      "count": 1762,
+      "max": [
+        0.999856173992157,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -0.9999729990959167,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1762,
+      "max": [
+        1.0000004768371582,
+        1.0000001192092896
+      ],
+      "min": [
+        -2.959030496185733e-07,
+        0.01000000536441803
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2754,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 42288,
+      "componentType": 5126,
+      "count": 216,
+      "max": [
+        0.8702612519264221,
+        0.8702614903450012,
+        7.150001525878906
+      ],
+      "min": [
+        -0.8702621459960938,
+        -0.8702614903450012,
+        2.8500006198883057
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 44880,
+      "componentType": 5126,
+      "count": 216,
+      "max": [
+        0.9658957719802856,
+        0.9658955931663513,
+        1.0
+      ],
+      "min": [
+        -0.9658958911895752,
+        -0.9658955931663513,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 14096,
+      "componentType": 5126,
+      "count": 216,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        7.450580596923828e-08,
+        0.01000000536441803
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 11016,
+      "componentType": 5125,
+      "count": 348,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 47472,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        0.3015986680984497,
+        0.30149605870246887,
+        4.0720624923706055
+      ],
+      "min": [
+        -0.2945367097854614,
+        -0.2654568552970886,
+        2.405808925628662
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 48192,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        0.9970946311950684,
+        0.9482919573783875,
+        0.4638644754886627
+      ],
+      "min": [
+        -0.9970946311950684,
+        -0.9482921957969666,
+        -0.46386444568634033
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 15824,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        1.0,
+        0.47238200902938843
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12408,
+      "componentType": 5125,
+      "count": 60,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Lamorak (https://sketchfab.com/Lamorak420)",
+      "license": "SKETCHFAB Standard (https://sketchfab.com/licenses)",
+      "source": "https://sketchfab.com/3d-models/oil-lantern-ac0d260571c64e0dbf995e3cdf5a1b97",
+      "title": "Oil Lantern"
+    },
+    "generator": "Sketchfab-16.75.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 12648,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 16304,
+      "byteOffset": 12648,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 48912,
+      "byteOffset": 28952,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 77864,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_clearcoat",
+    "KHR_materials_emissive_strength"
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_clearcoat": {
+          "clearcoatFactor": 0.15085760261364606,
+          "clearcoatRoughnessFactor": 0.04
+        }
+      },
+      "name": "oil_lantern",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0871367,
+          0.0311361,
+          0.0113118,
+          1.0
+        ],
+        "metallicFactor": 0.9127646865209493,
+        "roughnessFactor": 0.6811449330131292
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "glass",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.8,
+          0.03504772585973595
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8040408205773457
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        0.243389,
+        0.0189908
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 10.0
+        }
+      },
+      "name": "oil_lantern_light",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.197031,
+          0.0248209,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9300583337967798
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Oil Lantern_oil lantern_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Oil Lantern_glass_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Oil Lantern_oil lantern light_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "4b17dd9eba0245778cead7ee8fe19576.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        12.49429988861084,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.035573300700525e-06,
+        -12.494259834289386,
+        0.0,
+        0.0,
+        4.997703552246028,
+        -8.142292581309028e-07,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Oil Lantern"
+    },
+    {
+      "mesh": 0,
+      "name": "Oil Lantern_oil lantern_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Oil Lantern_glass_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Oil Lantern_oil lantern light_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

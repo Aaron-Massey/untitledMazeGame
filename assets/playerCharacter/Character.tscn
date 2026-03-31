@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dikss4lhjyr5t"]
 
 [ext_resource type="Script" uid="uid://df8cogc5vfkq6" path="res://assets/playerCharacter/character.gd" id="1_bli80"]
+[ext_resource type="Script" uid="uid://cw37j8o5jkvl3" path="res://assets/playerCharacter/lantern.gd" id="2_7f6i5"]
 [ext_resource type="PackedScene" uid="uid://bbo5kbmdceuvg" path="res://assets/UI/ui_(non_interactive).tscn" id="2_kvk7c"]
+[ext_resource type="PackedScene" uid="uid://cbmdif7kpnrxf" path="res://assets/playerCharacter/lantern_model.tscn" id="4_tb2j1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_to3e8"]
 
@@ -34,3 +36,15 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1, 0)
 target_position = Vector3(0, 0, -2.5)
 
 [node name="UI (NON-INTERACTIVE)" parent="." unique_id=1016864372 instance=ExtResource("2_kvk7c")]
+
+[node name="Lantern" type="Node3D" parent="." unique_id=1691315242]
+transform = Transform3D(0.82132846, 0, -0.57045555, 0, 1, 0, 0.57045555, 0, 0.82132846, 0.8260112, 0.8585241, -0.7614727)
+script = ExtResource("2_7f6i5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lantern" unique_id=1276087575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
+light_color = Color(1, 0.7882353, 0.5137255, 1)
+light_energy = 4.0
+omni_range = 20.0
+
+[node name="Sketchfab_Scene" parent="Lantern" unique_id=282320140 instance=ExtResource("4_tb2j1")]
