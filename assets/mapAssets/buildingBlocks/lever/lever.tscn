@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1vsx1xhagm7o"]
 
-[ext_resource type="Script" uid="uid://ccumo8kk2fb32" path="res://assets/mapAssets/lever/lever.gd" id="1_3yo11"]
+[ext_resource type="Script" uid="uid://ccumo8kk2fb32" path="res://assets/mapAssets/buildingBlocks/lever/lever.gd" id="1_3yo11"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jpbha"]
 size = Vector3(1, 0.5, 0.5)
