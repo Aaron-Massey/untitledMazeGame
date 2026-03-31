@@ -27,6 +27,7 @@ window/vsync/vsync_mode=0
 folder_colors={
 "res://assets/": "red",
 "res://assets/mapAssets/": "blue",
+"res://assets/mapAssets/corridors/basicPaths/": "yellow",
 "res://assets/maps/": "purple",
 "res://assets/playerCharacter/": "orange"
 }
