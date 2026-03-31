@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dtsr1sipecr5w"]
 
 [ext_resource type="PackedScene" uid="uid://bnreu7qqhh4sb" path="res://assets/mapAssets/testPlatform/testPlatform.tscn" id="1_60hww"]
+[ext_resource type="PackedScene" uid="uid://c1vsx1xhagm7o" path="res://assets/mapAssets/lever/lever.tscn" id="2_aho1l"]
+[ext_resource type="PackedScene" uid="uid://jdidct1uybph" path="res://assets/mapAssets/door/door.tscn" id="3_njq04"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
 sky_top_color = Color(0.32796705, 0.45588773, 0.6272682, 1)
@@ -32,3 +34,11 @@ compositor = SubResource("Compositor_njq04")
 
 [node name="TestPlatform" parent="." unique_id=1252000107 instance=ExtResource("1_60hww")]
 size = Vector2(100, 100)
+
+[node name="Lever" parent="." unique_id=1292525392 instance=ExtResource("2_aho1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9683447, 0, 0)
+
+[node name="Door" parent="." unique_id=1253411669 instance=ExtResource("3_njq04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+
+[connection signal="toggled" from="Lever" to="Door" method="_on_lever_toggled"]

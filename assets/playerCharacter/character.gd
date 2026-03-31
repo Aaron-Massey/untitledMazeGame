@@ -10,6 +10,8 @@ class_name PlayerCharacter
 ##   - Press ESC to release the mouse, and click to recapture it.
 ## - Debug input to reset the character's position.
 ##   - Press 'R' to reset the character to a default position (0,10,0).
+## - Item Interaction
+##   - Press 'F' or 'E' to interact with objects
 ##
 ## The Character object's origin is located at the feet,
 ## The camera is positioned 1.0 units above the origin
@@ -70,6 +72,8 @@ var _pitch_input: float
 
 ## Reference to the camera node for controlling the field of view and rotation
 @onready var camera_controller: Camera3D = $Neck/Camera3D
+## Reference to the interaction raycast node
+@onready var interaction_ray: RayCast3D = $Neck/Camera3D/InteractionRay
 
 
 ## Initialize the camera settings and stamina when the character is ready
@@ -77,6 +81,11 @@ func _ready() -> void:
 	camera_controller.fov = fov
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_stamina = max_stamina
+
+	# add interaction exclusions
+	for child in self.get_children():
+		if child is CollisionObject3D:
+			interaction_ray.add_exception(child)
 
 
 ## Handle mouse input for camera control
@@ -95,6 +104,9 @@ func _physics_process(delta: float) -> void:
 	move(delta)
 	update_camera()
 	move_and_slide()
+	var target = test_interaction()
+	if target:
+		print("Interacted with: ", target.name)
 
 
 ## Handle movement input, sprinting logic, and stamina management
@@ -200,3 +212,22 @@ func set_camera_angles(yaw: float, pitch: float) -> void:
 	_yaw_input = yaw
 	_pitch_input = pitch
 	update_camera()
+
+
+func test_interaction() -> Object:
+	if Input.is_action_just_pressed("interact"):
+		if interaction_ray.is_colliding():
+			var collider = interaction_ray.get_collider()
+
+			# 1. Check if the object hit has the method
+			if collider.has_method("interact"):
+				collider.interact()
+				return collider
+
+			# 2. Check if the PARENT has the method
+			var parent = collider.get_parent()
+			if parent and parent.has_method("interact"):
+				parent.interact()
+				return parent
+
+	return null
