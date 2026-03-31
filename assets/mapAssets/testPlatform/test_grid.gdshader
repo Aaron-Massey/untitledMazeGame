@@ -15,9 +15,13 @@ void vertex() {
 }
 
 void fragment() {
-    // 1. Figure out which side of the box we are looking at (Top/Bottom, Front/Back, Left/Right)
+    // FIX: Convert the View Space NORMAL into a World Space NORMAL
+    vec3 world_normal = (INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
+    
+    // 1. Figure out which side of the box we are looking at using the WORLD normal
     vec2 grid_pos;
-    vec3 n = abs(NORMAL);
+    vec3 n = abs(world_normal); // Use our new world_normal here!
+    
     if (n.x > n.y && n.x > n.z) {
         grid_pos = world_pos.zy;
     } else if (n.y > n.x && n.y > n.z) {

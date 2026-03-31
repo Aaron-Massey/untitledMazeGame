@@ -2,13 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://bnreu7qqhh4sb" path="res://assets/mapAssets/testPlatform/testPlatform.tscn" id="1_60hww"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
+sky_top_color = Color(0.32796705, 0.45588773, 0.6272682, 1)
+sky_horizon_color = Color(0.6427366, 0.6506235, 0.6663967, 1)
+
+[sub_resource type="Sky" id="Sky_aho1l"]
+sky_material = SubResource("ProceduralSkyMaterial_60hww")
+
+[sub_resource type="Environment" id="Environment_60hww"]
+sky = SubResource("Sky_aho1l")
+ambient_light_source = 3
+ambient_light_color = Color(0.9340804, 0.9340805, 0.93408036, 1)
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aho1l"]
+
+[sub_resource type="Compositor" id="Compositor_njq04"]
+
 [node name="TestMap" type="Node3D" unique_id=609011090]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=869757680]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 50, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=250959903]
+environment = SubResource("Environment_60hww")
+camera_attributes = SubResource("CameraAttributesPractical_aho1l")
+compositor = SubResource("Compositor_njq04")
 
 [node name="TestPlatform" parent="." unique_id=1252000107 instance=ExtResource("1_60hww")]
 size = Vector2(100, 100)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=471221399]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.205544, 0.03064537)
-shadow_enabled = true
-omni_range = 185.253
-omni_attenuation = 0.284

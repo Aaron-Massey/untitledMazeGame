@@ -1,0 +1,38 @@
+[gd_resource type="Theme" format=3 uid="uid://bgw7k3pc20t16"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpyjk"]
+bg_color = Color(1, 1, 1, 0)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4mg0"]
+bg_color = Color(0.5224644, 0.57865417, 0.79843897, 0.18039216)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8j1i"]
+bg_color = Color(0.3320732, 0.54498625, 0.911624, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+Crosshair/base_type = &"Panel"
+Crosshair/styles/panel = SubResource("StyleBoxFlat_hpyjk")
+StaminaBar/base_type = &"ProgressBar"
+StaminaBar/constants/outline_size = 0
+StaminaBar/font_sizes/font_size = 16
+StaminaBar/fonts/font = null
+StaminaBar/styles/background = SubResource("StyleBoxFlat_j4mg0")
+StaminaBar/styles/fill = SubResource("StyleBoxFlat_l8j1i")
