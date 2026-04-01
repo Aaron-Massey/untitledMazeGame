@@ -20,6 +20,7 @@ shape = SubResource("CapsuleShape3D_to3e8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2124359531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_to3e8")
 skin = SubResource("Skin_bli80")
 
@@ -39,8 +40,13 @@ collide_with_areas = true
 
 [node name="UI (NON-INTERACTIVE)" parent="." unique_id=1016864372 instance=ExtResource("2_kvk7c")]
 
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=793623284]
+transform = Transform3D(-0.65554523, 0, 0.755156, 0, 1, 0, -0.755156, 0, -0.65554523, 0.355, 1.3, -0.326)
+
+[node name="TargetPoint" type="Marker3D" parent="SpringArm3D" unique_id=599060008]
+
 [node name="Lantern" type="Node3D" parent="." unique_id=1691315242]
-transform = Transform3D(0.82132846, 0, -0.57045555, 0, 1, 0, 0.57045555, 0, 0.82132846, 0.8260112, 0.8585241, -0.7614727)
+transform = Transform3D(0.781662, 0, -0.62370217, 0, 1, 0, 0.62370217, 0, 0.781662, 0.28622505, 0.8585241, -0.22221681)
 script = ExtResource("2_7f6i5")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lantern" unique_id=1276087575]
