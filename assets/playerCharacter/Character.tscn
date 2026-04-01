@@ -43,8 +43,10 @@ script = ExtResource("2_7f6i5")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lantern" unique_id=1276087575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
-light_color = Color(1, 0.7882353, 0.5137255, 1)
-light_energy = 4.0
+light_color = Color(1, 0.5647059, 0.30980393, 1)
+light_energy = 3.0
+light_size = 0.1
 omni_range = 20.0
+omni_attenuation = 1.25
 
 [node name="Sketchfab_Scene" parent="Lantern" unique_id=282320140 instance=ExtResource("4_tb2j1")]
