@@ -65,6 +65,15 @@ size = Vector2(0.05, 0.05)
 [node name="Oil Lantern" parent="Sketchfab_model/4b17dd9eba0245778cead7ee8fe19576_fbx/RootNode" parent_id_path=PackedInt32Array(1678809195) index="0" unique_id=1509452476]
 script = ExtResource("2_6d7x3")
 
+[node name="Oil Lantern_oil lantern_0" parent="Sketchfab_model/4b17dd9eba0245778cead7ee8fe19576_fbx/RootNode/Oil Lantern" index="0" unique_id=1608251356]
+cast_shadow = 0
+
+[node name="Oil Lantern_glass_0" parent="Sketchfab_model/4b17dd9eba0245778cead7ee8fe19576_fbx/RootNode/Oil Lantern" index="1" unique_id=1292494145]
+cast_shadow = 0
+
+[node name="Oil Lantern_oil lantern light_0" parent="Sketchfab_model/4b17dd9eba0245778cead7ee8fe19576_fbx/RootNode/Oil Lantern" index="2" unique_id=624144948]
+cast_shadow = 0
+
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Sketchfab_model/4b17dd9eba0245778cead7ee8fe19576_fbx/RootNode/Oil Lantern" index="3" unique_id=134405004]
 transform = Transform3D(0.57124597, 0, 0, 0, -0.029439474, -0.5997399, 0, 0.99956685, -0.017663663, 0, -2.7237587e-07, 4.1795793)
 material_override = SubResource("StandardMaterial3D_bj5nw")
