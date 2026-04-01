@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://2v56d1scugmh"]
+
+[ext_resource type="Script" uid="uid://b1yast48lwgcg" path="res://assets/mapAssets/corridors/basicPaths/master_tile.gd" id="1_gy3sr"]
+[ext_resource type="PackedScene" uid="uid://fdpkeqv26v4e" path="res://assets/mapAssets/buildingBlocks/floor.tscn" id="1_yd88u"]
+[ext_resource type="PackedScene" uid="uid://di8vy62yy51wn" path="res://assets/mapAssets/buildingBlocks/cornerPillar.tscn" id="2_gy3sr"]
+[ext_resource type="PackedScene" uid="uid://dconyyx5pywct" path="res://assets/mapAssets/buildingBlocks/wallSmaller.tscn" id="4_gy3sr"]
+
+[node name="MasterTile" type="Node3D" unique_id=1541376648]
+script = ExtResource("1_gy3sr")
+
+[node name="Floor" parent="." unique_id=1535853046 instance=ExtResource("1_yd88u")]
+
+[node name="Corners" type="Node3D" parent="." unique_id=956749353]
+
+[node name="CornerPillar (-x,+z)" parent="Corners" unique_id=206425455 instance=ExtResource("2_gy3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="CornerPillar (+x,+z)" parent="Corners" unique_id=1436027933 instance=ExtResource("2_gy3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CornerPillar (-x,-z)" parent="Corners" unique_id=1110166469 instance=ExtResource("2_gy3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="CornerPillar (+x,-z)" parent="Corners" unique_id=1785501327 instance=ExtResource("2_gy3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Walls" type="Node3D" parent="." unique_id=871794572]
+
+[node name="Wall (+Z)" parent="Walls" unique_id=1874416637 instance=ExtResource("4_gy3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Wall (-Z)" parent="Walls" unique_id=1496684283 instance=ExtResource("4_gy3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Wall (+X)" parent="Walls" unique_id=1769347230 instance=ExtResource("4_gy3sr")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, 0)
+
+[node name="Wall (-X)" parent="Walls" unique_id=22434032 instance=ExtResource("4_gy3sr")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 0, 0)

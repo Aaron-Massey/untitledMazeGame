@@ -14,3 +14,4 @@ stamina_idle_recovery_multiplier = 1.5
 mouse_sensitivity = 0.1
 
 [node name="TestMap" parent="." unique_id=609011090 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031614304, -0.006137848, -0.008052826)
