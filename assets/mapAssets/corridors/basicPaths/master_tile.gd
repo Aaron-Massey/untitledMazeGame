@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 @export_category("Columns")
 @export var negative_x_positive_z: bool = true

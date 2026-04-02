@@ -70,6 +70,21 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10, 
 [node name="MasterTile" parent="Path Testing" unique_id=1541376648 instance=ExtResource("6_nr6vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
 
+[node name="LPath4" parent="Path Testing" unique_id=1664856294 instance=ExtResource("2_75ci1")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -20, 0, 5)
+
+[node name="IPath4" parent="Path Testing" unique_id=126682030 instance=ExtResource("4_kswm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 14)
+
+[node name="DeadEnd4" parent="Path Testing" unique_id=1841615425 instance=ExtResource("5_7etev")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 0, 5)
+
+[node name="TPath3" parent="Path Testing" unique_id=2047705849 instance=ExtResource("3_jk1a7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30, 0, 14)
+
+[node name="+Path2" parent="Path Testing" unique_id=1637260303 instance=ExtResource("4_jk1a7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, 10)
+
 [node name="BaseMap" type="Node3D" parent="." unique_id=1646447186]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="BaseMap" unique_id=869757680]
