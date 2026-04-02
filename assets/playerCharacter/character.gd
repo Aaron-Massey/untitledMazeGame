@@ -20,27 +20,27 @@ extends CharacterBody3D
 
 @export_category("Movement")
 ## How quickly the character accelerates when input is given
-@export var acceleration: float = 10.0
+@export var acceleration: float = 5
 ## How quickly the character decelerates when no input is given
 @export var deceleration: float = 15.0
 ## The maximum speed the character can reach when moving
-@export var top_speed: float = 100.0
+@export var top_speed: float = 4.0
 ## The initial velocity applied when the character jumps
 @export var jump_velocity: float = 4.5
 ## A multiplier for acceleration when changing direction to reduce sliding
-@export var turn_friction: float = 3.0
+@export var turn_friction: float = 10.0
 
 @export_category("Sprint & Stamina")
 ## Multiplier applied to top_speed when sprinting (e.g., 1.5 = 50% faster)
-@export var sprint_speed_multiplier: float = 1.5
+@export var sprint_speed_multiplier: float = 2
 ## How quickly the character accelerates when starting to sprint
-@export var sprint_acceleration: float = 60.0
+@export var sprint_acceleration: float = 5
 ## If true, sprint input toggles on/off. If false, sprint must be held.
 @export var sprint_toggle_mode: bool = false
 ## The maximum stamina the character can have
 @export var max_stamina: float = 100.0
 ## The rate at which stamina drains while sprinting (units per second)
-@export var stamina_drain_rate: float = 25.0
+@export var stamina_drain_rate: float = 50.0
 ## The rate at which stamina recovers while walking (units per second)
 @export var stamina_walk_recovery_rate: float = 10.0
 ## Multiplier applied to stamina_walk_recovery_rate when idle (e.g., 3.5 = 3.5x faster)
@@ -81,7 +81,7 @@ func _ready() -> void:
 	camera_controller.fov = fov
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_stamina = max_stamina
-
+	
 	# add interaction exclusions
 	for child in self.get_children():
 		if child is CollisionObject3D:
