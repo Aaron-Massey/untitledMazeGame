@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dtsr1sipecr5w" path="res://assets/maps/testMap.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://assets/playerCharacter/Character.tscn" id="2_a0tk4"]
-[ext_resource type="Script" uid="uid://c5phgb7xt0b5l" path="res://assets/maps/test_map.gd" id="3_h2yge"]
+[ext_resource type="Script" path="res://assets/maps/test_map.gd" id="3_h2yge"]
 
 [node name="Main" type="Node3D" unique_id=1523194918]
 

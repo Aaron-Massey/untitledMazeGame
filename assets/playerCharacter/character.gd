@@ -34,7 +34,7 @@ extends CharacterBody3D
 ## Multiplier applied to top_speed when sprinting (e.g., 1.5 = 50% faster)
 @export var sprint_speed_multiplier: float = 2
 ## How quickly the character accelerates when starting to sprint
-@export var sprint_acceleration: float = 5
+@export var sprint_acceleration: float = 60
 ## If true, sprint input toggles on/off. If false, sprint must be held.
 @export var sprint_toggle_mode: bool = false
 ## The maximum stamina the character can have
