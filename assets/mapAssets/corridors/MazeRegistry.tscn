@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://dk71ljojur5l1"]
+
+[ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="1_r24bv"]
+[ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="2_y326s"]
+[ext_resource type="PackedScene" uid="uid://cvjpkes4ta7oa" path="res://assets/mapAssets/corridors/basicPaths/L_path.tscn" id="3_fvuor"]
+[ext_resource type="PackedScene" uid="uid://fnvdlefu5n01" path="res://assets/mapAssets/corridors/basicPaths/T_path.tscn" id="4_xetfs"]
+[ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="5_vi5rg"]
+
+[node name="MazeRegistry" type="Node3D" unique_id=834967640]
+
+[node name="Lables" type="Node3D" parent="." unique_id=1672631512]
+
+[node name="Bitmask_Lables" type="Node3D" parent="Lables" unique_id=1933509637]
+
+[node name="0" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=124434700]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0, -5)
+pixel_size = 0.15
+text = "0"
+
+[node name="1" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=2068557206]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.5, 0, -5)
+pixel_size = 0.15
+text = "1"
+
+[node name="2" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=1343790979]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 22.5, 0, -5)
+pixel_size = 0.15
+text = "2"
+
+[node name="3" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=483106605]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 32.5, 0, -5)
+pixel_size = 0.15
+text = "3"
+
+[node name="4" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=1651702561]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 42.5, 0, -5)
+pixel_size = 0.15
+text = "4"
+
+[node name="5" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=858863718]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 52.5, 0, -5)
+pixel_size = 0.15
+text = "5"
+
+[node name="6" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=936164504]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 62.5, 0, -5)
+pixel_size = 0.15
+text = "6"
+
+[node name="7" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=369003370]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 72.5, 0, -5)
+pixel_size = 0.15
+text = "7"
+
+[node name="8" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=1357228378]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 82.5, 0, -5)
+pixel_size = 0.15
+text = "8"
+
+[node name="9" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=238234448]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 92.5, 0, -5)
+pixel_size = 0.15
+text = "9"
+
+[node name="10" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=75948693]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 102.5, 0, -5)
+pixel_size = 0.15
+text = "10"
+
+[node name="11" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=1389534963]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 112.5, 0, -5)
+pixel_size = 0.15
+text = "11"
+
+[node name="12" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=1353430008]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 122.5, 0, -5)
+pixel_size = 0.15
+text = "12"
+
+[node name="13" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=1174173144]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 132.5, 0, -5)
+pixel_size = 0.15
+text = "13"
+
+[node name="14" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=466653969]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 142.5, 0, -5)
+pixel_size = 0.15
+text = "14"
+
+[node name="15" type="Label3D" parent="Lables/Bitmask_Lables" unique_id=120033720]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 152.5, 0, -5)
+pixel_size = 0.15
+text = "15"
+
+[node name="Variant_Lables" type="Node3D" parent="Lables" unique_id=1813555534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="Variant_0_Base" type="Label3D" parent="Lables/Variant_Lables" unique_id=1585609127]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 0.15
+text = "Variant_0_Base"
+horizontal_alignment = 2
+
+[node name="Variant_1_Mossy" type="Label3D" parent="Lables/Variant_Lables" unique_id=1835567516]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 10)
+pixel_size = 0.15
+text = "Variant_1_Mossy
+"
+horizontal_alignment = 2
+
+[node name="Variant_0_Base" type="Node3D" parent="." unique_id=782649031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="DeadEnd1" parent="Variant_0_Base" unique_id=523903364 instance=ExtResource("1_r24bv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 0, 0)
+
+[node name="DeadEnd2" parent="Variant_0_Base" unique_id=241253968 instance=ExtResource("1_r24bv")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 20, 0, 0)
+
+[node name="IPath3" parent="Variant_0_Base" unique_id=1535853046 instance=ExtResource("2_y326s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 30, 0, 0)
+
+[node name="DeadEnd4" parent="Variant_0_Base" unique_id=1696135080 instance=ExtResource("1_r24bv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="LPath5" parent="Variant_0_Base" unique_id=1858405938 instance=ExtResource("3_fvuor")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 50, 0, 0)
+
+[node name="LPath6" parent="Variant_0_Base" unique_id=328480563 instance=ExtResource("3_fvuor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+
+[node name="TPath7" parent="Variant_0_Base" unique_id=596943864 instance=ExtResource("4_xetfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
+
+[node name="DeadEnd8" parent="Variant_0_Base" unique_id=248298439 instance=ExtResource("1_r24bv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 80, 0, 0)
+
+[node name="LPath9" parent="Variant_0_Base" unique_id=353878550 instance=ExtResource("3_fvuor")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 90, 0, 0)
+
+[node name="LPath10" parent="Variant_0_Base" unique_id=992320208 instance=ExtResource("3_fvuor")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 0)
+
+[node name="TPath11" parent="Variant_0_Base" unique_id=1033415102 instance=ExtResource("4_xetfs")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 110, 0, 0)
+
+[node name="IPath12" parent="Variant_0_Base" unique_id=1513176460 instance=ExtResource("2_y326s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
+
+[node name="TPath13" parent="Variant_0_Base" unique_id=1192596414 instance=ExtResource("4_xetfs")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 130, 0, 0)
+
+[node name="TPath14" parent="Variant_0_Base" unique_id=1062677588 instance=ExtResource("4_xetfs")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 140, 0, 0)
+
+[node name="+Path15" parent="Variant_0_Base" unique_id=897187955 instance=ExtResource("5_vi5rg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0)
