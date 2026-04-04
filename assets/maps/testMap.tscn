@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="4_jk1a7"]
 [ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="4_kswm2"]
 [ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_7etev"]
-[ext_resource type="PackedScene" uid="uid://2v56d1scugmh" path="res://assets/mapAssets/corridors/basicPaths/masterTile.tscn" id="6_nr6vv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
 sky_top_color = Color(0.32796705, 0.45588773, 0.6272682, 1)
@@ -66,9 +65,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 
 
 [node name="DeadEnd3" parent="Path Testing" unique_id=176183959 instance=ExtResource("5_7etev")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10, 0, 20)
-
-[node name="MasterTile" parent="Path Testing" unique_id=1541376648 instance=ExtResource("6_nr6vv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
 
 [node name="LPath4" parent="Path Testing" unique_id=1664856294 instance=ExtResource("2_75ci1")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -20, 0, 5)
