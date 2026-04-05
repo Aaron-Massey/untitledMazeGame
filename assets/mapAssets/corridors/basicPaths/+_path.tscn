@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://di8vy62yy51wn" path="res://assets/mapAssets/buildingBlocks/cornerPillar.tscn" id="2_uh0ji"]
 
 [node name="+Path" type="Node3D" unique_id=897187955]
+metadata/can_hold_lever = false
 
 [node name="Floor" parent="." unique_id=1535853046 instance=ExtResource("1_lfbpo")]
 

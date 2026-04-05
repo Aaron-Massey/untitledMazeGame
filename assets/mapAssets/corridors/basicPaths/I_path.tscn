@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://igvlck16vhqm" path="res://assets/mapAssets/buildingBlocks/wall.tscn" id="2_1no11"]
 
 [node name="IPath" type="Node3D" unique_id=1535853046]
+metadata/can_hold_lever = false
 
 [node name="Floor" parent="." unique_id=1310295817 instance=ExtResource("1_0awee")]
 

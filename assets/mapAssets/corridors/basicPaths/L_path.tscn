@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://di8vy62yy51wn" path="res://assets/mapAssets/buildingBlocks/cornerPillar.tscn" id="4_qkhdy"]
 
 [node name="LPath" type="Node3D" unique_id=1858405938]
+metadata/can_hold_lever = false
 
 [node name="Wall" parent="." unique_id=1535853046 instance=ExtResource("1_7rynx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
