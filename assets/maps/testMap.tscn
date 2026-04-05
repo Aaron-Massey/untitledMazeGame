@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="4_jk1a7"]
 [ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="4_kswm2"]
 [ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_7etev"]
+[ext_resource type="Script" uid="uid://csy0yjxopt58p" path="res://assets/maps/lut_testing.gd" id="9_nr6vv"]
+[ext_resource type="PackedScene" uid="uid://dk71ljojur5l1" path="res://assets/mapAssets/corridors/MazeRegistry.tscn" id="10_ejmm7"]
+[ext_resource type="Script" uid="uid://b4ti7ihttimop" path="res://assets/mapAssets/corridors/MazeLUT.gd" id="11_ure1x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
 sky_top_color = Color(0.32796705, 0.45588773, 0.6272682, 1)
@@ -25,6 +28,11 @@ reflected_light_source = 2
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aho1l"]
 
 [sub_resource type="Compositor" id="Compositor_njq04"]
+
+[sub_resource type="Resource" id="Resource_asbqg"]
+script = ExtResource("11_ure1x")
+registry_scene = ExtResource("10_ejmm7")
+metadata/_custom_type_script = "uid://b4ti7ihttimop"
 
 [node name="TestMap" type="Node3D" unique_id=609011090]
 
@@ -103,5 +111,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03165531, 0, 0)
 
 [node name="Door" parent="Interactable Testing" unique_id=1253411669 instance=ExtResource("3_njq04")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="LUT Testing" type="Node3D" parent="." unique_id=106272296]
+script = ExtResource("9_nr6vv")
+maze_lut = SubResource("Resource_asbqg")
+start_offset = Vector3(-50, 0.3, -30)
 
 [connection signal="toggled" from="Interactable Testing/Lever" to="Interactable Testing/Door" method="_on_lever_toggled"]
