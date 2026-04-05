@@ -11,6 +11,7 @@ size = Vector3(5, 0.25, 5)
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1226169395]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1776877741]
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_584j6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=797512564]
