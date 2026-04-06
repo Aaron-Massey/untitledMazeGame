@@ -59,8 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
 light_color = Color(1, 0.5647059, 0.30980393, 1)
 light_energy = 3.0
 shadow_enabled = true
-omni_range = 20.0
-omni_attenuation = 1.25
+omni_range = 7.5
 
 [node name="Sketchfab_Scene" parent="Lantern" unique_id=282320140 instance=ExtResource("4_tb2j1")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)

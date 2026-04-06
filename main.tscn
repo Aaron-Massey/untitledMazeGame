@@ -1,8 +1,22 @@
-[gd_scene format=3 uid="uid://ddf3rnkg4j1ua"]
+[gd_scene format=4 uid="uid://ddf3rnkg4j1ua"]
 
 [ext_resource type="PackedScene" uid="uid://dtsr1sipecr5w" path="res://assets/maps/testMap.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://assets/playerCharacter/Character.tscn" id="2_a0tk4"]
-[ext_resource type="Script" path="res://assets/maps/test_map.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://c5phgb7xt0b5l" path="res://assets/maps/test_map.gd" id="3_h2yge"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1bvp3"]
+_surfaces = [{
+"aabb": AABB(-1.5, -3, -0.75, 3, 6, 1.5),
+"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
+"format": 34359738391,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AADAvwAAQMAAAEA/AADAvwAAQMAAAEC/AADAvwAAQEAAAEC/AADAPwAAQMAAAEC/AADAvwAAQMAAAEC/AADAvwAAQMAAAEA/AADAvwAAQEAAAEC/AADAvwAAQMAAAEC/AADAPwAAQMAAAEC/AADAvwAAQEAAAEC/AADAvwAAQEAAAEA/AADAvwAAQMAAAEA/AADAvwAAQMAAAEA/AADAvwAAQEAAAEA/AADAPwAAQEAAAEA/AADAPwAAQEAAAEA/AADAvwAAQEAAAEA/AADAvwAAQEAAAEC/AADAvwAAQMAAAEA/AADAPwAAQMAAAEA/AADAPwAAQMAAAEC/AADAPwAAQEAAAEA/AADAPwAAQMAAAEA/AADAvwAAQMAAAEA/AADAPwAAQMAAAEC/AADAPwAAQMAAAEA/AADAPwAAQEAAAEA/AADAPwAAQMAAAEC/AADAPwAAQEAAAEC/AADAvwAAQEAAAEC/AADAvwAAQEAAAEC/AADAPwAAQEAAAEC/AADAPwAAQEAAAEA/AADAPwAAQEAAAEA/AADAPwAAQEAAAEC/AADAPwAAQMAAAEC/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
+}]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h2yge"]
+data = PackedVector3Array(-1.5, -3, 0.75, -1.5, -3, -0.75, -1.5, 3, -0.75, 1.5, -3, -0.75, -1.5, -3, -0.75, -1.5, -3, 0.75, -1.5, 3, -0.75, -1.5, -3, -0.75, 1.5, -3, -0.75, -1.5, 3, -0.75, -1.5, 3, 0.75, -1.5, -3, 0.75, -1.5, -3, 0.75, -1.5, 3, 0.75, 1.5, 3, 0.75, 1.5, 3, 0.75, -1.5, 3, 0.75, -1.5, 3, -0.75, -1.5, -3, 0.75, 1.5, -3, 0.75, 1.5, -3, -0.75, 1.5, 3, 0.75, 1.5, -3, 0.75, -1.5, -3, 0.75, 1.5, -3, -0.75, 1.5, -3, 0.75, 1.5, 3, 0.75, 1.5, -3, -0.75, 1.5, 3, -0.75, -1.5, 3, -0.75, -1.5, 3, -0.75, 1.5, 3, -0.75, 1.5, 3, 0.75, 1.5, 3, 0.75, 1.5, 3, -0.75, 1.5, -3, -0.75)
 
 [node name="Main" type="Node3D" unique_id=1523194918]
 
@@ -17,3 +31,25 @@ mouse_sensitivity = 0.1
 [node name="TestMap" parent="." unique_id=609011090 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13317108, 0, 0.13623047)
 script = ExtResource("3_h2yge")
+
+[node name="Test Wall" type="StaticBody3D" parent="TestMap" unique_id=1139204017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.754997, 0, -0.13623047)
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="TestMap/Test Wall" unique_id=862009181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24500322, 3, 0.7727623)
+mesh = SubResource("ArrayMesh_1bvp3")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="TestMap/Test Wall" unique_id=1122288051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24500322, 3, 0.7727623)
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="Test Wall2" type="StaticBody3D" parent="TestMap" unique_id=1016228533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.754997, 0, -5.1362305)
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="TestMap/Test Wall2" unique_id=1236798700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24500322, 3, 0.7727623)
+mesh = SubResource("ArrayMesh_1bvp3")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="TestMap/Test Wall2" unique_id=1099028808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24500322, 3, 0.7727623)
+shape = SubResource("ConcavePolygonShape3D_h2yge")
