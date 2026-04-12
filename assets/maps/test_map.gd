@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var world_env = $WorldEnvironment
 
+## Enables full bright for devs
 @export var dev_full_bright: bool = false:
 	set(value):
 		dev_full_bright = value
