@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cvjpkes4ta7oa"]
+
+[ext_resource type="PackedScene" uid="uid://igvlck16vhqm" path="res://assets/mapAssets/buildingBlocks/wall.tscn" id="1_7rynx"]
+[ext_resource type="PackedScene" uid="uid://fdpkeqv26v4e" path="res://assets/mapAssets/buildingBlocks/floor.tscn" id="2_41gcy"]
+[ext_resource type="PackedScene" uid="uid://di8vy62yy51wn" path="res://assets/mapAssets/buildingBlocks/cornerPillar.tscn" id="4_qkhdy"]
+
+[node name="LPath" type="Node3D" unique_id=1858405938]
+metadata/can_hold_lever = false
+
+[node name="Wall" parent="." unique_id=1535853046 instance=ExtResource("1_7rynx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Floor" parent="." unique_id=450282244 instance=ExtResource("2_41gcy")]
+
+[node name="Wall2" parent="." unique_id=1877238123 instance=ExtResource("1_7rynx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, 0)
+
+[node name="CornerPillar" parent="." unique_id=206425455 instance=ExtResource("4_qkhdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)

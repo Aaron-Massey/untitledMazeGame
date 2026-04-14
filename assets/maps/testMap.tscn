@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://dtsr1sipecr5w"]
 
 [ext_resource type="PackedScene" uid="uid://bnreu7qqhh4sb" path="res://assets/mapAssets/testPlatform/testPlatform.tscn" id="1_60hww"]
-[ext_resource type="PackedScene" uid="uid://c1vsx1xhagm7o" path="res://assets/mapAssets/lever/lever.tscn" id="2_aho1l"]
-[ext_resource type="PackedScene" uid="uid://jdidct1uybph" path="res://assets/mapAssets/door/door.tscn" id="3_njq04"]
+[ext_resource type="PackedScene" uid="uid://cvjpkes4ta7oa" path="res://assets/mapAssets/corridors/basicPaths/L_path.tscn" id="2_75ci1"]
+[ext_resource type="PackedScene" uid="uid://c1vsx1xhagm7o" path="res://assets/mapAssets/buildingBlocks/lever/lever.tscn" id="2_aho1l"]
+[ext_resource type="PackedScene" uid="uid://fnvdlefu5n01" path="res://assets/mapAssets/corridors/basicPaths/T_path.tscn" id="3_jk1a7"]
+[ext_resource type="PackedScene" uid="uid://jdidct1uybph" path="res://assets/mapAssets/buildingBlocks/door/door.tscn" id="3_njq04"]
+[ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="4_jk1a7"]
+[ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="4_kswm2"]
+[ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_7etev"]
+[ext_resource type="Script" path="res://assets/maps/lut_testing.gd" id="9_nr6vv"]
+[ext_resource type="PackedScene" uid="uid://dk71ljojur5l1" path="res://assets/mapAssets/corridors/MazeRegistry.tscn" id="10_ejmm7"]
+[ext_resource type="Script" uid="uid://b4ti7ihttimop" path="res://assets/mapAssets/corridors/MazeLUT.gd" id="11_ure1x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
 sky_top_color = Color(0.32796705, 0.45588773, 0.6272682, 1)
@@ -24,25 +32,93 @@ reflected_light_source = 2
 
 [sub_resource type="Compositor" id="Compositor_njq04"]
 
+[sub_resource type="Resource" id="Resource_asbqg"]
+script = ExtResource("11_ure1x")
+registry_scene = ExtResource("10_ejmm7")
+metadata/_custom_type_script = "uid://b4ti7ihttimop"
+
 [node name="TestMap" type="Node3D" unique_id=609011090]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=869757680]
+[node name="BaseMap" type="Node3D" parent="." unique_id=1646447186]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="BaseMap" unique_id=869757680]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 50, 0)
 visible = false
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=250959903]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="BaseMap" unique_id=250959903]
 environment = SubResource("Environment_60hww")
 camera_attributes = SubResource("CameraAttributesPractical_aho1l")
 compositor = SubResource("Compositor_njq04")
 
-[node name="TestPlatform" parent="." unique_id=1252000107 instance=ExtResource("1_60hww")]
+[node name="TestPlatform" parent="BaseMap" unique_id=1252000107 instance=ExtResource("1_60hww")]
 size = Vector2(100, 100)
 
-[node name="Lever" parent="." unique_id=1292525392 instance=ExtResource("2_aho1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9683447, 0, 0)
+[node name="Path Testing" type="Node3D" parent="." unique_id=1471079305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.331, 8)
 
-[node name="Door" parent="." unique_id=1253411669 instance=ExtResource("3_njq04")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2)
+[node name="IPath" parent="Path Testing" unique_id=1535853046 instance=ExtResource("4_kswm2")]
 
-[connection signal="toggled" from="Lever" to="Door" method="_on_lever_toggled"]
+[node name="LPath" parent="Path Testing" unique_id=1858405938 instance=ExtResource("2_75ci1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 5)
+
+[node name="TPath" parent="Path Testing" unique_id=596943864 instance=ExtResource("3_jk1a7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="+Path" parent="Path Testing" unique_id=897187955 instance=ExtResource("4_jk1a7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
+
+[node name="LPath2" parent="Path Testing" unique_id=505232764 instance=ExtResource("2_75ci1")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 10, 0, 5)
+
+[node name="TPath2" parent="Path Testing" unique_id=2029064512 instance=ExtResource("3_jk1a7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 10)
+
+[node name="IPath2" parent="Path Testing" unique_id=432840987 instance=ExtResource("4_kswm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
+
+[node name="IPath3" parent="Path Testing" unique_id=957109549 instance=ExtResource("4_kswm2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 10)
+
+[node name="LPath3" parent="Path Testing" unique_id=1711756835 instance=ExtResource("2_75ci1")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5, 0, 15)
+
+[node name="DeadEnd" parent="Path Testing" unique_id=523903364 instance=ExtResource("5_7etev")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 15)
+
+[node name="DeadEnd2" parent="Path Testing" unique_id=740664542 instance=ExtResource("5_7etev")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 0, 10)
+
+[node name="DeadEnd3" parent="Path Testing" unique_id=176183959 instance=ExtResource("5_7etev")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10, 0, 20)
+
+[node name="LPath4" parent="Path Testing" unique_id=1664856294 instance=ExtResource("2_75ci1")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -20, 0, 5)
+
+[node name="IPath4" parent="Path Testing" unique_id=126682030 instance=ExtResource("4_kswm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 14)
+
+[node name="DeadEnd4" parent="Path Testing" unique_id=1841615425 instance=ExtResource("5_7etev")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 0, 5)
+
+[node name="TPath3" parent="Path Testing" unique_id=2047705849 instance=ExtResource("3_jk1a7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30, 0, 14)
+
+[node name="+Path2" parent="Path Testing" unique_id=1637260303 instance=ExtResource("4_jk1a7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, 10)
+
+[node name="Interactable Testing" type="Node3D" parent="." unique_id=2012300249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Lever" parent="Interactable Testing" unique_id=1292525392 instance=ExtResource("2_aho1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03165531, 0, 0)
+
+[node name="Door" parent="Interactable Testing" unique_id=1253411669 instance=ExtResource("3_njq04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="LUT Testing" type="Node3D" parent="." unique_id=106272296]
+script = ExtResource("9_nr6vv")
+maze_lut = SubResource("Resource_asbqg")
+start_offset = Vector3(-50, 0.3, -30)
+
+[connection signal="toggled" from="Interactable Testing/Lever" to="Interactable Testing/Door" method="_on_lever_toggled"]
