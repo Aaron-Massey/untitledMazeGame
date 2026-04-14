@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="4_jk1a7"]
 [ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="4_kswm2"]
 [ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_7etev"]
-[ext_resource type="Script" path="res://assets/maps/lut_testing.gd" id="9_nr6vv"]
+[ext_resource type="Script" uid="uid://csy0yjxopt58p" path="res://assets/maps/lut_testing.gd" id="9_nr6vv"]
 [ext_resource type="PackedScene" uid="uid://dk71ljojur5l1" path="res://assets/mapAssets/corridors/MazeRegistry.tscn" id="10_ejmm7"]
 [ext_resource type="Script" uid="uid://b4ti7ihttimop" path="res://assets/mapAssets/corridors/MazeLUT.gd" id="11_ure1x"]
 
