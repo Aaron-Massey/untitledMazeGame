@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dikss4lhjyr5t"]
 
 [ext_resource type="Script" uid="uid://df8cogc5vfkq6" path="res://assets/playerCharacter/character.gd" id="1_bli80"]
-[ext_resource type="Script" uid="uid://cw37j8o5jkvl3" path="res://assets/playerCharacter/lantern.gd" id="2_7f6i5"]
+[ext_resource type="Script" path="res://assets/playerCharacter/lantern.gd" id="2_7f6i5"]
 [ext_resource type="PackedScene" uid="uid://bbo5kbmdceuvg" path="res://assets/UI/ui_(non_interactive).tscn" id="2_kvk7c"]
 [ext_resource type="PackedScene" uid="uid://cbmdif7kpnrxf" path="res://assets/playerCharacter/lantern_model.tscn" id="4_tb2j1"]
 
@@ -41,8 +41,6 @@ target_position = Vector3(0, 0, -2.5)
 collision_mask = 15
 collide_with_areas = true
 
-[node name="UI (NON-INTERACTIVE)" parent="." unique_id=1016864372 instance=ExtResource("2_kvk7c")]
-
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=793623284]
 transform = Transform3D(-0.65554523, 0, 0.755156, 0, 1, 0, -0.755156, 0, -0.65554523, 0.3020305, 1.4856973, -0.23288654)
 shape = SubResource("SphereShape3D_tb2j1")
@@ -64,3 +62,5 @@ omni_attenuation = 1.25
 
 [node name="Sketchfab_Scene" parent="Lantern" unique_id=282320140 instance=ExtResource("4_tb2j1")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)
+
+[node name="UI (NON-INTERACTIVE)" parent="." unique_id=1016864372 instance=ExtResource("2_kvk7c")]
