@@ -2,16 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dtsr1sipecr5w" path="res://assets/maps/testMap.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://assets/playerCharacter/Character.tscn" id="2_a0tk4"]
+[ext_resource type="Script" path="res://assets/maps/test_map.gd" id="3_h2yge"]
 
 [node name="Main" type="Node3D" unique_id=1523194918]
 
 [node name="CharacterBody3D" parent="." unique_id=194776046 instance=ExtResource("2_a0tk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1920929e-07, 0)
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 deceleration = 27.0
-top_speed = 10.0
 stamina_idle_recovery_multiplier = 1.5
 mouse_sensitivity = 0.1
 
 [node name="TestMap" parent="." unique_id=609011090 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031614304, -0.006137848, -0.008052826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13317108, 0, 0.13623047)
+script = ExtResource("3_h2yge")
