@@ -20,7 +20,7 @@ extends CharacterBody3D
 
 @export_category("Movement")
 ## How quickly the character accelerates when input is given
-@export var acceleration: float = 10.0
+@export var acceleration: float = 30.0
 ## How quickly the character decelerates when no input is given
 @export var deceleration: float = 15.0
 ## The maximum speed the character can reach when moving
