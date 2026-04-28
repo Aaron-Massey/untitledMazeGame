@@ -20,27 +20,27 @@ extends CharacterBody3D
 
 @export_category("Movement")
 ## How quickly the character accelerates when input is given
-@export var acceleration: float = 30.0
+@export var acceleration: float = 5
 ## How quickly the character decelerates when no input is given
 @export var deceleration: float = 15.0
 ## The maximum speed the character can reach when moving
-@export var top_speed: float = 100.0
+@export var top_speed: float = 4.0
 ## The initial velocity applied when the character jumps
 @export var jump_velocity: float = 4.5
 ## A multiplier for acceleration when changing direction to reduce sliding
-@export var turn_friction: float = 3.0
+@export var turn_friction: float = 10.0
 
 @export_category("Sprint & Stamina")
 ## Multiplier applied to top_speed when sprinting (e.g., 1.5 = 50% faster)
-@export var sprint_speed_multiplier: float = 1.5
+@export var sprint_speed_multiplier: float = 2
 ## How quickly the character accelerates when starting to sprint
-@export var sprint_acceleration: float = 60.0
+@export var sprint_acceleration: float = 60
 ## If true, sprint input toggles on/off. If false, sprint must be held.
 @export var sprint_toggle_mode: bool = false
 ## The maximum stamina the character can have
 @export var max_stamina: float = 100.0
 ## The rate at which stamina drains while sprinting (units per second)
-@export var stamina_drain_rate: float = 25.0
+@export var stamina_drain_rate: float = 50.0
 ## The rate at which stamina recovers while walking (units per second)
 @export var stamina_walk_recovery_rate: float = 10.0
 ## Multiplier applied to stamina_walk_recovery_rate when idle (e.g., 3.5 = 3.5x faster)
@@ -56,6 +56,14 @@ extends CharacterBody3D
 ## The sensitivity of mouse movement for camera control
 @export var mouse_sensitivity: float = 0.5
 
+@export_category("Headbob Settings")
+## The rate at which the head bobs
+@export var headbob_frequency: float = 2.0
+## How high the head bobs
+@export var headbob_amplitude: float = 0.06
+## How long it takes for the head to bob
+var headbob_time: float = 0.0
+
 # Internal state variables
 ## The current stamina of the character, initialized to max_stamina
 var current_stamina: float = 100.0
@@ -69,6 +77,8 @@ var sprint_toggled_on: bool = false
 var _yaw_input: float
 ## Accumulated pitch input from mouse movement for vertical rotation
 var _pitch_input: float
+## Current camera position
+var camera_base_position: Vector3
 
 ## Reference to the camera node for controlling the field of view and rotation
 @onready var camera_controller: Camera3D = $Neck/Camera3D
@@ -81,7 +91,9 @@ func _ready() -> void:
 	camera_controller.fov = fov
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_stamina = max_stamina
-
+	
+	camera_base_position = $Neck/Camera3D.transform.origin
+	
 	# add interaction exclusions
 	for child in self.get_children():
 		if child is CollisionObject3D:
@@ -107,7 +119,10 @@ func _physics_process(delta: float) -> void:
 	var target = test_interaction()
 	if target:
 		print("Interacted with: ", target.name)
-
+		
+	# Head bobbing code:
+	headbob_time += delta * velocity.length() * float(is_on_floor())
+	$Neck/Camera3D.transform.origin = camera_base_position + headbob(headbob_time)
 
 ## Handle movement input, sprinting logic, and stamina management
 func move(delta: float) -> void:
@@ -162,6 +177,12 @@ func move(delta: float) -> void:
 	velocity.x = current_xz.x
 	velocity.z = current_xz.z
 
+## Move the head to simulate walking
+func headbob(headbob_time):
+	var headbob_position = Vector3.ZERO
+	headbob_position.y = sin(headbob_time * headbob_frequency) * headbob_amplitude
+	headbob_position.x = cos(headbob_time * headbob_frequency / 2) * headbob_amplitude / 1.5
+	return headbob_position
 
 ## Update the stamina based on whether the character is sprinting, walking, or idle
 func update_stamina(delta: float) -> void:
