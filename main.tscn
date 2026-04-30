@@ -4,7 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://assets/playerCharacter/Character.tscn" id="2_a0tk4"]
 [ext_resource type="Script" path="res://assets/maps/test_map.gd" id="3_h2yge"]
 
+[sub_resource type="GDScript" id="GDScript_h2yge"]
+script/source = "extends Node3D
+"
+
 [node name="Main" type="Node3D" unique_id=1523194918]
+script = SubResource("GDScript_h2yge")
 
 [node name="CharacterBody3D" parent="." unique_id=194776046 instance=ExtResource("2_a0tk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1920929e-07, 0)
