@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtsr1sipecr5w"]
 
-[ext_resource type="PackedScene" uid="uid://bnreu7qqhh4sb" path="res://assets/mapAssets/testPlatform/testPlatform.tscn" id="1_60hww"]
+[ext_resource type="PackedScene" uid="uid://sdnd04peaqy5" path="res://assets/mapAssets/base_map.tscn" id="1_ejmm7"]
 [ext_resource type="PackedScene" uid="uid://cvjpkes4ta7oa" path="res://assets/mapAssets/corridors/basicPaths/L_path.tscn" id="2_75ci1"]
 [ext_resource type="PackedScene" uid="uid://c1vsx1xhagm7o" path="res://assets/mapAssets/buildingBlocks/lever/lever.tscn" id="2_aho1l"]
 [ext_resource type="PackedScene" uid="uid://fnvdlefu5n01" path="res://assets/mapAssets/corridors/basicPaths/T_path.tscn" id="3_jk1a7"]
@@ -8,29 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="4_jk1a7"]
 [ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="4_kswm2"]
 [ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_7etev"]
-[ext_resource type="Script" path="res://assets/maps/lut_testing.gd" id="9_nr6vv"]
+[ext_resource type="Script" uid="uid://csy0yjxopt58p" path="res://assets/maps/lut_testing.gd" id="9_nr6vv"]
 [ext_resource type="PackedScene" uid="uid://dk71ljojur5l1" path="res://assets/mapAssets/corridors/MazeRegistry.tscn" id="10_ejmm7"]
 [ext_resource type="Script" uid="uid://b4ti7ihttimop" path="res://assets/mapAssets/corridors/MazeLUT.gd" id="11_ure1x"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_60hww"]
-sky_top_color = Color(0.32796705, 0.45588773, 0.6272682, 1)
-sky_horizon_color = Color(0.6427366, 0.6506235, 0.6663967, 1)
-
-[sub_resource type="Sky" id="Sky_aho1l"]
-sky_material = SubResource("ProceduralSkyMaterial_60hww")
-
-[sub_resource type="Environment" id="Environment_60hww"]
-background_mode = 1
-sky = SubResource("Sky_aho1l")
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_sky_contribution = 0.0
-ambient_light_energy = 0.01
-reflected_light_source = 2
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aho1l"]
-
-[sub_resource type="Compositor" id="Compositor_njq04"]
 
 [sub_resource type="Resource" id="Resource_asbqg"]
 script = ExtResource("11_ure1x")
@@ -39,20 +19,7 @@ metadata/_custom_type_script = "uid://b4ti7ihttimop"
 
 [node name="TestMap" type="Node3D" unique_id=609011090]
 
-[node name="BaseMap" type="Node3D" parent="." unique_id=1646447186]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="BaseMap" unique_id=869757680]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 50, 0)
-visible = false
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="BaseMap" unique_id=250959903]
-environment = SubResource("Environment_60hww")
-camera_attributes = SubResource("CameraAttributesPractical_aho1l")
-compositor = SubResource("Compositor_njq04")
-
-[node name="TestPlatform" parent="BaseMap" unique_id=1252000107 instance=ExtResource("1_60hww")]
-size = Vector2(100, 100)
+[node name="BaseMap" parent="." unique_id=768318692 instance=ExtResource("1_ejmm7")]
 
 [node name="Path Testing" type="Node3D" parent="." unique_id=1471079305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.331, 8)
