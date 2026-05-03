@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ddf3rnkg4j1ua"]
 
-[ext_resource type="PackedScene" uid="uid://dtsr1sipecr5w" path="res://assets/maps/testMap.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://boymjvlcao8fh" path="res://assets/maps/Maze1.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dikss4lhjyr5t" path="res://assets/playerCharacter/Character.tscn" id="2_a0tk4"]
-[ext_resource type="Script" path="res://assets/maps/test_map.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://sdnd04peaqy5" path="res://assets/mapAssets/base_map.tscn" id="3_h2yge"]
 
 [sub_resource type="GDScript" id="GDScript_h2yge"]
 script/source = "extends Node3D
@@ -12,13 +12,15 @@ script/source = "extends Node3D
 script = SubResource("GDScript_h2yge")
 
 [node name="CharacterBody3D" parent="." unique_id=194776046 instance=ExtResource("2_a0tk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1920929e-07, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -1.1920929e-07, 0)
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 deceleration = 27.0
 stamina_idle_recovery_multiplier = 1.5
 mouse_sensitivity = 0.1
 
-[node name="TestMap" parent="." unique_id=609011090 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13317108, 0, 0.13623047)
-script = ExtResource("3_h2yge")
+[node name="Maze1" parent="." unique_id=454442366 node_paths=PackedStringArray("player") instance=ExtResource("2_0xm2m")]
+player = NodePath("../CharacterBody3D")
+
+[node name="BaseMap" parent="." unique_id=768318692 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0037174225, -0.99393463, 0.047225952)
