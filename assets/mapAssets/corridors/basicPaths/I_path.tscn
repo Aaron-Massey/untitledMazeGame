@@ -9,6 +9,9 @@ size = Vector3(1, 9, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1no11"]
 size = Vector3(5, 0, 5)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_1no11"]
+size = Vector3(1, 9, 5)
+
 [node name="IPath" type="Node3D" unique_id=1535853046]
 metadata/can_hold_lever = false
 
@@ -28,3 +31,11 @@ shape = SubResource("BoxShape3D_1no11")
 [node name="Dirt" parent="." unique_id=202071809 instance=ExtResource("2_1no11")]
 
 [node name="I_Path" parent="." unique_id=111666755 instance=ExtResource("3_m68gu")]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1280012555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, 0)
+occluder = SubResource("BoxOccluder3D_1no11")
+
+[node name="OccluderInstance3D2" type="OccluderInstance3D" parent="." unique_id=1748995052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, 0)
+occluder = SubResource("BoxOccluder3D_1no11")
