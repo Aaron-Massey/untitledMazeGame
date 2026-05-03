@@ -1,5 +1,16 @@
 [gd_scene format=3 uid="uid://fdpkeqv26v4e"]
 
+[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="1_kj1mx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qwilc"]
+render_priority = 0
+shader = ExtResource("1_kj1mx")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(1, 1, 1, 1)
+shader_parameter/shininess = 200.0
+shader_parameter/uBumpStrength = 2.0
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_584j6"]
 size = Vector2(5, 5)
 
@@ -11,6 +22,7 @@ size = Vector3(5, 0.25, 5)
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1226169395]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1776877741]
+material_override = SubResource("ShaderMaterial_qwilc")
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_584j6")
 

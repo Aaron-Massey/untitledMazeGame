@@ -1,12 +1,32 @@
 [gd_scene format=3 uid="uid://c1vsx1xhagm7o"]
 
 [ext_resource type="Script" uid="uid://ccumo8kk2fb32" path="res://assets/mapAssets/buildingBlocks/lever/lever.gd" id="1_3yo11"]
+[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="2_2kkb3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iutao"]
+render_priority = 0
+shader = ExtResource("2_2kkb3")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(1, 1, 1, 1)
+shader_parameter/shininess = 200.0
+shader_parameter/uBumpStrength = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_jpbha"]
+material = SubResource("ShaderMaterial_iutao")
 size = Vector3(1, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r282l"]
 size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qaqq6"]
+render_priority = 0
+shader = ExtResource("2_2kkb3")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(1, 1, 1, 1)
+shader_parameter/shininess = 200.0
+shader_parameter/uBumpStrength = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3yo11"]
 size = Vector3(1.124939, 1, 0.4152832)
@@ -25,6 +45,7 @@ transform = Transform3D(0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 layers = 8
 mesh = SubResource("BoxMesh_r282l")
+surface_material_override/0 = SubResource("ShaderMaterial_qaqq6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2087520343]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.0059692375, 0.4, -0.012744144)

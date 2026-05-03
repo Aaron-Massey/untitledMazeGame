@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://csnfyuioxxj2i"]
+
+[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="1_qsyge"]
+[ext_resource type="Texture2D" uid="uid://dcwm86jgr5b5s" path="res://assets/mapAssets/shhhhhh_secret/NormalMap.png" id="2_fv4t7"]
+[ext_resource type="Texture2D" uid="uid://dqwwujhyf0oil" path="res://assets/mapAssets/shhhhhh_secret/maxwell_the_cat_dingus_0.jpg" id="3_21wxf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qsyge")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(0.6392157, 0.6392157, 0.6392157, 1)
+shader_parameter/shininess = 33.0290015213775
+shader_parameter/uBumpStrength = 0.1790000085025
+shader_parameter/uTexture = ExtResource("3_21wxf")
+shader_parameter/uNormalMap = ExtResource("2_fv4t7")
