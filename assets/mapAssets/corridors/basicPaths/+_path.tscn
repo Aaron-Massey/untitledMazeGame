@@ -1,21 +1,37 @@
 [gd_scene format=3 uid="uid://scmbowdyjl8c"]
 
-[ext_resource type="PackedScene" uid="uid://fdpkeqv26v4e" path="res://assets/mapAssets/buildingBlocks/floor.tscn" id="1_lfbpo"]
-[ext_resource type="PackedScene" uid="uid://di8vy62yy51wn" path="res://assets/mapAssets/buildingBlocks/cornerPillar.tscn" id="2_uh0ji"]
+[ext_resource type="PackedScene" uid="uid://cj7xgvnq12c8m" path="res://assets/mapAssets/corridors/basicPaths/pathModels/+_Path.glb" id="1_lfbpo"]
+[ext_resource type="PackedScene" uid="uid://6dkmf4r4hh2y" path="res://assets/mapAssets/corridors/basicPaths/pathModels/Dirt.glb" id="2_uh0ji"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijssd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uw54c"]
+size = Vector3(5, 0, 5)
 
 [node name="+Path" type="Node3D" unique_id=897187955]
 metadata/can_hold_lever = false
 
-[node name="Floor" parent="." unique_id=1535853046 instance=ExtResource("1_lfbpo")]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1920061712]
 
-[node name="CornerPillar" parent="." unique_id=206425455 instance=ExtResource("2_uh0ji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+[node name="+_Path" parent="StaticBody3D" unique_id=915335622 instance=ExtResource("1_lfbpo")]
 
-[node name="CornerPillar2" parent="." unique_id=1609266109 instance=ExtResource("2_uh0ji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1629234833]
+transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, 2, 4.5, 2)
+shape = SubResource("BoxShape3D_ijssd")
 
-[node name="CornerPillar3" parent="." unique_id=810913301 instance=ExtResource("2_uh0ji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1940610338]
+transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, -2, 4.5, 2)
+shape = SubResource("BoxShape3D_ijssd")
 
-[node name="CornerPillar4" parent="." unique_id=1687448613 instance=ExtResource("2_uh0ji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1383963669]
+transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, 2, 4.5, -2)
+shape = SubResource("BoxShape3D_ijssd")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=2029813080]
+transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, -2, 4.5, -2)
+shape = SubResource("BoxShape3D_ijssd")
+
+[node name="Dirt" parent="StaticBody3D" unique_id=202071809 instance=ExtResource("2_uh0ji")]
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1143222806]
+shape = SubResource("BoxShape3D_uw54c")
