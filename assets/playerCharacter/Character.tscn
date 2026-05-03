@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dikss4lhjyr5t"]
 
 [ext_resource type="Script" uid="uid://df8cogc5vfkq6" path="res://assets/playerCharacter/character.gd" id="1_bli80"]
-[ext_resource type="Script" path="res://assets/playerCharacter/lantern.gd" id="2_7f6i5"]
+[ext_resource type="Script" uid="uid://cw37j8o5jkvl3" path="res://assets/playerCharacter/lantern.gd" id="2_7f6i5"]
 [ext_resource type="PackedScene" uid="uid://bbo5kbmdceuvg" path="res://assets/UI/ui_(non_interactive).tscn" id="2_kvk7c"]
 [ext_resource type="PackedScene" uid="uid://cbmdif7kpnrxf" path="res://assets/playerCharacter/lantern_model.tscn" id="4_tb2j1"]
 
@@ -57,8 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
 light_color = Color(1, 0.5647059, 0.30980393, 1)
 light_energy = 3.0
 shadow_enabled = true
-omni_range = 20.0
-omni_attenuation = 1.25
+shadow_bias = 0.3
+omni_range = 18.0
+omni_attenuation = 1.4
 
 [node name="Sketchfab_Scene" parent="Lantern" unique_id=282320140 instance=ExtResource("4_tb2j1")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)

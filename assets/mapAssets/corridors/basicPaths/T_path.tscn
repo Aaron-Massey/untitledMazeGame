@@ -8,6 +8,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_egtpy"]
 size = Vector3(5, 0, 5)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_g7514"]
+size = Vector3(1, 9, 1)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_kjehw"]
+size = Vector3(5, 9, 1)
+
 [node name="TPath" type="Node3D" unique_id=596943864]
 metadata/can_hold_lever = false
 
@@ -32,3 +38,15 @@ shape = SubResource("BoxShape3D_3fvk5")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=2082158385]
 shape = SubResource("BoxShape3D_egtpy")
+
+[node name="OccluderInstance3D3" type="OccluderInstance3D" parent="." unique_id=280500354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, 2)
+occluder = SubResource("BoxOccluder3D_g7514")
+
+[node name="OccluderInstance3D4" type="OccluderInstance3D" parent="." unique_id=1808833976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, 2)
+occluder = SubResource("BoxOccluder3D_g7514")
+
+[node name="OccluderInstance3D2" type="OccluderInstance3D" parent="." unique_id=289510506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -2)
+occluder = SubResource("BoxOccluder3D_kjehw")

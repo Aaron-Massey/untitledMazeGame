@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://boymjvlcao8fh"]
 
 [ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="1_7388v"]
-[ext_resource type="Script" uid="uid://bmt0f28e0ux41" path="res://assets/maps/maze_1.gd" id="1_v5u6l"]
+[ext_resource type="Script" path="res://assets/maps/maze_1.gd" id="1_v5u6l"]
 [ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="2_6q8jt"]
 [ext_resource type="PackedScene" uid="uid://fnvdlefu5n01" path="res://assets/mapAssets/corridors/basicPaths/T_path.tscn" id="3_v5u6l"]
-[ext_resource type="PackedScene" uid="uid://cvjpkes4ta7oa" path="res://assets/mapAssets/corridors/basicPaths/L_path.tscn" id="4_u2ltx"]
+[ext_resource type="PackedScene" uid="uid://damty3e6tvw1e" path="res://assets/mapAssets/corridors/basicPaths/L_path.tscn" id="4_u2ltx"]
 [ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_5ivn6"]
 [ext_resource type="PackedScene" uid="uid://c1vsx1xhagm7o" path="res://assets/mapAssets/buildingBlocks/lever/lever.tscn" id="6_ajtsr"]
 [ext_resource type="PackedScene" uid="uid://jdidct1uybph" path="res://assets/mapAssets/buildingBlocks/door/door.tscn" id="7_q2864"]
@@ -14,7 +14,10 @@
 script = ExtResource("1_v5u6l")
 end_marker = NodePath("cheatEnd")
 
-[node name="Walls" type="Node3D" parent="." unique_id=827408905]
+[node name="GridMap" type="GridMap" parent="." unique_id=1812734830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 105)
+
+[node name="Walls" type="GridMap" parent="." unique_id=836450551]
 
 [node name="+Path" parent="Walls" unique_id=897187955 instance=ExtResource("1_7388v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)

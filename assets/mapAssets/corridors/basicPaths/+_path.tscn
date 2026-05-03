@@ -8,6 +8,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uw54c"]
 size = Vector3(5, 0, 5)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_lfbpo"]
+size = Vector3(1, 9, 1)
+
 [node name="+Path" type="Node3D" unique_id=897187955]
 metadata/can_hold_lever = false
 
@@ -35,3 +38,19 @@ shape = SubResource("BoxShape3D_ijssd")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1143222806]
 shape = SubResource("BoxShape3D_uw54c")
+
+[node name="OccluderInstance3D3" type="OccluderInstance3D" parent="." unique_id=781850398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, 2)
+occluder = SubResource("BoxOccluder3D_lfbpo")
+
+[node name="OccluderInstance3D4" type="OccluderInstance3D" parent="." unique_id=1273913255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, 2)
+occluder = SubResource("BoxOccluder3D_lfbpo")
+
+[node name="OccluderInstance3D5" type="OccluderInstance3D" parent="." unique_id=958440708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, -2)
+occluder = SubResource("BoxOccluder3D_lfbpo")
+
+[node name="OccluderInstance3D6" type="OccluderInstance3D" parent="." unique_id=722192585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, -2)
+occluder = SubResource("BoxOccluder3D_lfbpo")
