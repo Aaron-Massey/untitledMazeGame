@@ -1,15 +1,30 @@
 [gd_scene format=3 uid="uid://cp8654e1ysin5"]
 
-[ext_resource type="PackedScene" uid="uid://fdpkeqv26v4e" path="res://assets/mapAssets/buildingBlocks/floor.tscn" id="1_0awee"]
-[ext_resource type="PackedScene" uid="uid://igvlck16vhqm" path="res://assets/mapAssets/buildingBlocks/wall.tscn" id="2_1no11"]
+[ext_resource type="PackedScene" uid="uid://6dkmf4r4hh2y" path="res://assets/mapAssets/corridors/basicPaths/pathModels/Dirt.glb" id="2_1no11"]
+[ext_resource type="PackedScene" uid="uid://ditwty6xlpirm" path="res://assets/mapAssets/corridors/basicPaths/pathModels/I_path.glb" id="3_m68gu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0awee"]
+size = Vector3(1, 9, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1no11"]
+size = Vector3(5, 0, 5)
 
 [node name="IPath" type="Node3D" unique_id=1535853046]
 metadata/can_hold_lever = false
 
-[node name="Floor" parent="." unique_id=1310295817 instance=ExtResource("1_0awee")]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=580224484]
 
-[node name="Wall" parent="." unique_id=1352164549 instance=ExtResource("2_1no11")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1156053522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, 0)
+shape = SubResource("BoxShape3D_0awee")
 
-[node name="Wall2" parent="." unique_id=1792701768 instance=ExtResource("2_1no11")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 0, 0)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=59165847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, 0)
+shape = SubResource("BoxShape3D_0awee")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=78567558]
+shape = SubResource("BoxShape3D_1no11")
+
+[node name="Dirt" parent="." unique_id=202071809 instance=ExtResource("2_1no11")]
+
+[node name="I_Path" parent="." unique_id=111666755 instance=ExtResource("3_m68gu")]

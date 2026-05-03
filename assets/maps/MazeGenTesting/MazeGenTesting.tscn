@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dagcs0fab2261"]
+
+[ext_resource type="Script" uid="uid://ob3q3ndgmlhn" path="res://assets/maps/MazeGenTesting/maze_gen_testing.gd" id="1_5hic0"]
+
+[node name="MazeGenTesting" type="Node3D" unique_id=1639412831]
+script = ExtResource("1_5hic0")
