@@ -1,0 +1,11 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://d3nq670tww5ev"]
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_j3pel"]
+resource_name = "Limiter"
+ceiling_db = -3.0
+threshold_db = -6.0
+
+[resource]
+bus/0/volume_db = 0.46499825
+bus/0/effect/0/effect = SubResource("AudioEffectLimiter_j3pel")
+bus/0/effect/0/enabled = true

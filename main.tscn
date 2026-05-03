@@ -19,7 +19,8 @@ deceleration = 27.0
 stamina_idle_recovery_multiplier = 1.5
 mouse_sensitivity = 0.1
 
-[node name="Maze1" parent="." unique_id=454442366 instance=ExtResource("2_0xm2m")]
+[node name="Maze1" parent="." unique_id=454442366 node_paths=PackedStringArray("player") instance=ExtResource("2_0xm2m")]
+player = NodePath("../CharacterBody3D")
 
 [node name="BaseMap" parent="." unique_id=768318692 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0037174225, -0.99393463, 0.047225952)

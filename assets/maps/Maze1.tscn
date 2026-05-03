@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://boymjvlcao8fh"]
 
 [ext_resource type="PackedScene" uid="uid://scmbowdyjl8c" path="res://assets/mapAssets/corridors/basicPaths/+_path.tscn" id="1_7388v"]
+[ext_resource type="Script" uid="uid://bmt0f28e0ux41" path="res://assets/maps/maze_1.gd" id="1_v5u6l"]
 [ext_resource type="PackedScene" uid="uid://cp8654e1ysin5" path="res://assets/mapAssets/corridors/basicPaths/I_path.tscn" id="2_6q8jt"]
 [ext_resource type="PackedScene" uid="uid://fnvdlefu5n01" path="res://assets/mapAssets/corridors/basicPaths/T_path.tscn" id="3_v5u6l"]
 [ext_resource type="PackedScene" uid="uid://cvjpkes4ta7oa" path="res://assets/mapAssets/corridors/basicPaths/L_path.tscn" id="4_u2ltx"]
 [ext_resource type="PackedScene" uid="uid://cgbkbd2ewapv2" path="res://assets/mapAssets/corridors/basicPaths/deadEnd.tscn" id="5_5ivn6"]
 [ext_resource type="PackedScene" uid="uid://c1vsx1xhagm7o" path="res://assets/mapAssets/buildingBlocks/lever/lever.tscn" id="6_ajtsr"]
 [ext_resource type="PackedScene" uid="uid://jdidct1uybph" path="res://assets/mapAssets/buildingBlocks/door/door.tscn" id="7_q2864"]
+[ext_resource type="PackedScene" uid="uid://t14gmo7a0a0r" path="res://assets/mapAssets/buildingBlocks/FinalRoom.tscn" id="8_6q8jt"]
 
-[node name="Maze1" type="Node3D" unique_id=454442366]
+[node name="Maze1" type="Node3D" unique_id=454442366 node_paths=PackedStringArray("end_marker")]
+script = ExtResource("1_v5u6l")
+end_marker = NodePath("cheatEnd")
 
 [node name="Walls" type="Node3D" parent="." unique_id=827408905]
 
@@ -867,26 +871,31 @@ required_levers = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 122)
 required_levers = 5
 
-[node name="FINAL_ROOM" type="Node3D" parent="." unique_id=475827640]
-
-[node name="Lever" parent="." unique_id=436188406 instance=ExtResource("6_ajtsr")]
+[node name="Lever" parent="Doors_Levers" unique_id=436188406 instance=ExtResource("6_ajtsr")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 15, 0, 105)
 
-[node name="Lever2" parent="." unique_id=267972688 instance=ExtResource("6_ajtsr")]
+[node name="Lever2" parent="Doors_Levers" unique_id=267972688 instance=ExtResource("6_ajtsr")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30, 0, 25)
 
-[node name="Lever3" parent="." unique_id=511927488 instance=ExtResource("6_ajtsr")]
+[node name="Lever3" parent="Doors_Levers" unique_id=511927488 instance=ExtResource("6_ajtsr")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 45, 0, 40)
 
-[node name="Lever4" parent="." unique_id=759652572 instance=ExtResource("6_ajtsr")]
+[node name="Lever4" parent="Doors_Levers" unique_id=759652572 instance=ExtResource("6_ajtsr")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40, 0, 55)
 
-[node name="Lever5" parent="." unique_id=1832378151 instance=ExtResource("6_ajtsr")]
+[node name="Lever5" parent="Doors_Levers" unique_id=1832378151 instance=ExtResource("6_ajtsr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
 
+[node name="FinalRoom" parent="." unique_id=862395637 instance=ExtResource("8_6q8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15, 0, 134)
+
+[node name="cheatEnd" type="Marker3D" parent="." unique_id=1532124876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 105)
+gizmo_extents = 1.45
+
 [connection signal="toggled" from="Doors_Levers/ENTRY LEVER" to="Doors_Levers/ENTRY DOOR" method="_on_lever_toggled"]
-[connection signal="toggled" from="Lever" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
-[connection signal="toggled" from="Lever2" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
-[connection signal="toggled" from="Lever3" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
-[connection signal="toggled" from="Lever4" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
-[connection signal="toggled" from="Lever5" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
+[connection signal="toggled" from="Doors_Levers/Lever" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
+[connection signal="toggled" from="Doors_Levers/Lever2" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
+[connection signal="toggled" from="Doors_Levers/Lever3" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
+[connection signal="toggled" from="Doors_Levers/Lever4" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
+[connection signal="toggled" from="Doors_Levers/Lever5" to="Doors_Levers/Final Door" method="_on_lever_toggled"]
