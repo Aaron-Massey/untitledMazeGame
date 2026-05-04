@@ -1,14 +1,25 @@
 [gd_scene format=3 uid="uid://jdidct1uybph"]
 
 [ext_resource type="Script" uid="uid://cju5m288jo4y5" path="res://assets/mapAssets/buildingBlocks/door/door.gd" id="1_mspgx"]
+[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="2_ypub0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4dew"]
+render_priority = 0
+shader = ExtResource("2_ypub0")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(1, 1, 1, 1)
+shader_parameter/shininess = 200.0
+shader_parameter/uBumpStrength = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_umnb1"]
+material = SubResource("ShaderMaterial_g4dew")
 size = Vector3(3, 3, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cycew"]
 size = Vector3(3, 3, 0.3)
 
-[node name="Door" type="StaticBody3D" unique_id=1253411669]
+[node name="Door" type="StaticBody3D" unique_id=1253411669 groups=["Door"]]
 script = ExtResource("1_mspgx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1033317306]

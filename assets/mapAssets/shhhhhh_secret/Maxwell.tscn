@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqwwujhyf0oil" path="res://assets/mapAssets/shhhhhh_secret/maxwell_the_cat_dingus_0.jpg" id="1_rp8nd"]
 [ext_resource type="Texture2D" uid="uid://de6mqj2bu65cs" path="res://assets/mapAssets/shhhhhh_secret/maxwell_the_cat_dingus_1.png" id="2_4slp2"]
 [ext_resource type="AudioStream" uid="uid://udvncypy4pq" path="res://assets/mapAssets/shhhhhh_secret/Maxwell the Cat Theme..mp3" id="3_4slp2"]
+[ext_resource type="Material" uid="uid://csnfyuioxxj2i" path="res://shaders/phong.tres" id="3_gb1uj"]
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_af044"]
 
@@ -306,6 +307,7 @@ shape = SubResource("CapsuleShape3D_kb6ab")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 gi_mode = 2
 mesh = SubResource("ArrayMesh_gb1uj")
+surface_material_override/0 = ExtResource("3_gb1uj")
 
 [node name="dingus_whiskers_0" type="MeshInstance3D" parent="AnimatableBody3D/Rotation Pivot/Maxwell Mesh" unique_id=1619345599]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

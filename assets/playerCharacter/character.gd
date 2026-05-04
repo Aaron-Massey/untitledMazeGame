@@ -15,7 +15,6 @@ class_name PlayerCharacter
 ##
 ## The Character object's origin is located at the feet,
 ## The camera is positioned 1.0 units above the origin
-
 extends CharacterBody3D
 
 @export_category("Movement")
@@ -73,12 +72,12 @@ var is_sprinting: bool = false
 var is_exhausted: bool = false
 ## Tracks the sprint toggle state when sprint_toggle_mode is enabled
 var sprint_toggled_on: bool = false
+## Current camera position
+var camera_base_position: Vector3
 ## Accumulated yaw input from mouse movement for horizontal rotation
 var _yaw_input: float
 ## Accumulated pitch input from mouse movement for vertical rotation
 var _pitch_input: float
-## Current camera position
-var camera_base_position: Vector3
 
 ## Reference to the camera node for controlling the field of view and rotation
 @onready var camera_controller: Camera3D = $Neck/Camera3D
@@ -91,9 +90,9 @@ func _ready() -> void:
 	camera_controller.fov = fov
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_stamina = max_stamina
-	
+
 	camera_base_position = $Neck/Camera3D.transform.origin
-	
+
 	# add interaction exclusions
 	for child in self.get_children():
 		if child is CollisionObject3D:
@@ -119,10 +118,11 @@ func _physics_process(delta: float) -> void:
 	var target = test_interaction()
 	if target:
 		print("Interacted with: ", target.name)
-		
+
 	# Head bobbing code:
 	headbob_time += delta * velocity.length() * float(is_on_floor())
 	$Neck/Camera3D.transform.origin = camera_base_position + headbob(headbob_time)
+
 
 ## Handle movement input, sprinting logic, and stamina management
 func move(delta: float) -> void:
@@ -177,12 +177,14 @@ func move(delta: float) -> void:
 	velocity.x = current_xz.x
 	velocity.z = current_xz.z
 
+
 ## Move the head to simulate walking
-func headbob(headbob_time):
+func headbob(_headbob_time):
 	var headbob_position = Vector3.ZERO
-	headbob_position.y = sin(headbob_time * headbob_frequency) * headbob_amplitude
-	headbob_position.x = cos(headbob_time * headbob_frequency / 2) * headbob_amplitude / 1.5
+	headbob_position.y = sin(_headbob_time * headbob_frequency) * headbob_amplitude
+	headbob_position.x = cos(_headbob_time * headbob_frequency / 2) * headbob_amplitude / 1.5
 	return headbob_position
+
 
 ## Update the stamina based on whether the character is sprinting, walking, or idle
 func update_stamina(delta: float) -> void:

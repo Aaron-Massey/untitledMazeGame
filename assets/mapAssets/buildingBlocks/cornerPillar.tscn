@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://di8vy62yy51wn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxtci"]
-albedo_color = Color(0, 0, 0, 1)
+[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="1_t7eo3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1rp4b"]
+render_priority = 0
+shader = ExtResource("1_t7eo3")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(1, 1, 1, 1)
+shader_parameter/shininess = 200.0
+shader_parameter/uBumpStrength = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_sxtci"]
-material = SubResource("StandardMaterial3D_sxtci")
+material = SubResource("ShaderMaterial_1rp4b")
 size = Vector3(1, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7eo3"]

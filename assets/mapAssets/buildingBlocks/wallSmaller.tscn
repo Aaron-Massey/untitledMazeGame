@@ -1,6 +1,18 @@
 [gd_scene format=3 uid="uid://dconyyx5pywct"]
 
+[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="1_k05jn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x42xc"]
+render_priority = 0
+shader = ExtResource("1_k05jn")
+shader_parameter/ambientMat = Color(1, 1, 1, 1)
+shader_parameter/diffuseMat = Color(1, 1, 1, 1)
+shader_parameter/specularMat = Color(1, 1, 1, 1)
+shader_parameter/shininess = 200.0
+shader_parameter/uBumpStrength = 2.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_a4tyo"]
+material = SubResource("ShaderMaterial_x42xc")
 size = Vector3(3, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gykjd"]
