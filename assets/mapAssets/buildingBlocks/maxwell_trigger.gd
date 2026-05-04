@@ -2,6 +2,7 @@ extends Area3D
 
 # Instead of exporting the tree and music, we export the whole Maxwell instance
 @export var maxwell_instance: Node3D
+@export var text: Label3D
 
 var has_triggered = false
 
@@ -15,3 +16,4 @@ func _on_body_entered(body):
 		# Check if we assigned Maxwell, and if he has our custom function
 		if maxwell_instance and maxwell_instance.has_method("start_dancing"):
 			maxwell_instance.start_dancing()
+			text.grow_and_shrink()

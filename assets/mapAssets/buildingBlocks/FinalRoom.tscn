@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://d3mfmitama7io" path="res://assets/mapAssets/buildingBlocks/maxwell_trigger.gd" id="4_0jhu8"]
 [ext_resource type="Texture2D" uid="uid://bs1pn3wb0w1ln" path="res://assets/mapAssets/buildingBlocks/final-room-textures/wall/thick-mortar-stonework_albedo.png" id="4_twliy"]
 [ext_resource type="PackedScene" uid="uid://cbmdif7kpnrxf" path="res://assets/playerCharacter/lantern_model.tscn" id="9_oeunt"]
+[ext_resource type="Script" uid="uid://bdvf7ajglewkc" path="res://assets/mapAssets/buildingBlocks/label_3d.gd" id="9_twliy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3f6op"]
 render_priority = 0
@@ -147,10 +148,11 @@ shape = SubResource("BoxShape3D_ftmy7")
 
 [node name="Maxwell" parent="." unique_id=598615257 instance=ExtResource("3_becxe")]
 
-[node name="Maxwell_Trigger" type="Area3D" parent="." unique_id=380936887 node_paths=PackedStringArray("maxwell_instance")]
+[node name="Maxwell_Trigger" type="Area3D" parent="." unique_id=380936887 node_paths=PackedStringArray("maxwell_instance", "text")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 script = ExtResource("4_0jhu8")
 maxwell_instance = NodePath("../Maxwell")
+text = NodePath("../Label3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Maxwell_Trigger" unique_id=338632926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
@@ -219,4 +221,11 @@ omni_attenuation = 1.4
 [node name="Sketchfab_Scene" parent="Lightsources/Lantern4" unique_id=80679906 instance=ExtResource("9_oeunt")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)
 
+[node name="Label3D" type="Label3D" parent="." unique_id=1399406605]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.1081247, 6.7657814, 0)
+pixel_size = 0.1
+text = "You  Win"
+script = ExtResource("9_twliy")
+
 [connection signal="body_entered" from="Maxwell_Trigger" to="Maxwell_Trigger" method="_on_body_entered"]
+[connection signal="body_entered" from="Maxwell_Trigger" to="Label3D" method="_on_maxwell_trigger_body_entered"]
