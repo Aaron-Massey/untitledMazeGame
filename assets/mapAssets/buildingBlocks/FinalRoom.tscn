@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dciyco2vphxgt" path="res://assets/mapAssets/buildingBlocks/final-room-textures/floor/cobblestylized3_albedo.png" id="3_twliy"]
 [ext_resource type="Script" uid="uid://d3mfmitama7io" path="res://assets/mapAssets/buildingBlocks/maxwell_trigger.gd" id="4_0jhu8"]
 [ext_resource type="Texture2D" uid="uid://bs1pn3wb0w1ln" path="res://assets/mapAssets/buildingBlocks/final-room-textures/wall/thick-mortar-stonework_albedo.png" id="4_twliy"]
+[ext_resource type="PackedScene" uid="uid://cbmdif7kpnrxf" path="res://assets/playerCharacter/lantern_model.tscn" id="9_oeunt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3f6op"]
 render_priority = 0
@@ -150,5 +151,68 @@ maxwell_instance = NodePath("../Maxwell")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Maxwell_Trigger" unique_id=338632926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_qnco6")
+
+[node name="Lightsources" type="Node3D" parent="." unique_id=2137718622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Lantern" type="Node3D" parent="Lightsources" unique_id=839953508]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.572, 0, 7.527)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lightsources/Lantern" unique_id=1850229738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
+light_color = Color(1, 0.5647059, 0.30980393, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.3
+omni_range = 18.0
+omni_attenuation = 1.4
+
+[node name="Sketchfab_Scene" parent="Lightsources/Lantern" unique_id=282320140 instance=ExtResource("9_oeunt")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)
+
+[node name="Lantern2" type="Node3D" parent="Lightsources" unique_id=1891723951]
+transform = Transform3D(-0.0723656, 0.9957054, 0.057741806, -0.77830505, -0.09257913, 0.62102354, 0.62370217, -1.1323689e-08, 0.781662, 5.5501184, 0.06626903, -6.548303)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lightsources/Lantern2" unique_id=1988201871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
+light_color = Color(1, 0.5647059, 0.30980393, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.3
+omni_range = 18.0
+omni_attenuation = 1.4
+
+[node name="Sketchfab_Scene" parent="Lightsources/Lantern2" unique_id=417376236 instance=ExtResource("9_oeunt")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)
+
+[node name="Lantern3" type="Node3D" parent="Lightsources" unique_id=910203486]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -8.56255, 0, -3.4627738)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lightsources/Lantern3" unique_id=1262099934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
+light_color = Color(1, 0.5647059, 0.30980393, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.3
+omni_range = 18.0
+omni_attenuation = 1.4
+
+[node name="Sketchfab_Scene" parent="Lightsources/Lantern3" unique_id=718717394 instance=ExtResource("9_oeunt")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)
+
+[node name="Lantern4" type="Node3D" parent="Lightsources" unique_id=1983796782]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -4.943049, 0, 10.50078)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lightsources/Lantern4" unique_id=1203343110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17693925, 0)
+light_color = Color(1, 0.5647059, 0.30980393, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.3
+omni_range = 18.0
+omni_attenuation = 1.4
+
+[node name="Sketchfab_Scene" parent="Lightsources/Lantern4" unique_id=80679906 instance=ExtResource("9_oeunt")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.0354774, 0)
 
 [connection signal="body_entered" from="Maxwell_Trigger" to="Maxwell_Trigger" method="_on_body_entered"]
