@@ -13,7 +13,7 @@ var _tween: Tween
 
 
 func interact() -> void:
-	active = not active
+	active = true
 	toggled.emit(active)
 
 	if _tween:
