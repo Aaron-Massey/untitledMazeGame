@@ -7,8 +7,10 @@ extends StaticBody3D
 # Is the door currently open?
 @export var is_open: bool = false
 
-var closed_pos: Vector3
-var open_pos: Vector3
+@onready var door: Node3D = $DoorPivot
+
+var closed_rot: Vector3
+var open_rot: Vector3
 var _tween: Tween
 
 # This will track how many levers are currently pulled
@@ -16,8 +18,8 @@ var _active_levers_count: int = 0
 
 
 func _ready() -> void:
-	closed_pos = self.position
-	open_pos = closed_pos + Vector3(0, 3, 0)
+	closed_rot = door.rotation_degrees
+	open_rot = closed_rot + Vector3(0, -90, 0)
 
 
 func _on_lever_toggled(is_active: bool) -> void:
@@ -38,18 +40,18 @@ func _on_lever_toggled(is_active: bool) -> void:
 
 
 func open_door() -> void:
-	_animate_door(open_pos)
+	_animate_door(open_rot)
 	print_debug("DOOR OPENED")
 	is_open = true
 
 
 func close_door() -> void:
-	_animate_door(closed_pos)
+	_animate_door(closed_rot)
 	print_debug("DOOR CLOSED")
 	is_open = false
 
 
-func _animate_door(target_pos: Vector3) -> void:
+func _animate_door(target_rot: Vector3) -> void:
 	if _tween:
 		_tween.kill()
 
@@ -58,7 +60,7 @@ func _animate_door(target_pos: Vector3) -> void:
 	# Using TRANS_CUBIC and EASE_OUT makes heavy doors feel more natural
 	(
 		_tween
-		. tween_property(self, "position", target_pos, door_speed)
+		. tween_property(door, "rotation_degrees", target_rot, door_speed)
 		. set_trans(Tween.TRANS_CUBIC)
 		. set_ease(Tween.EASE_OUT)
 	)

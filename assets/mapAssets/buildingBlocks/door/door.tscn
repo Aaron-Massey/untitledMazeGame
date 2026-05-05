@@ -1,32 +1,35 @@
 [gd_scene format=3 uid="uid://jdidct1uybph"]
 
 [ext_resource type="Script" uid="uid://cju5m288jo4y5" path="res://assets/mapAssets/buildingBlocks/door/door.gd" id="1_mspgx"]
-[ext_resource type="Shader" uid="uid://dltr4i13vdjel" path="res://shaders/phong.gdshader" id="2_ypub0"]
+[ext_resource type="PackedScene" uid="uid://babgxbk0mt3w" path="res://assets/mapAssets/buildingBlocks/door/door_frame.glb" id="2_g4dew"]
+[ext_resource type="PackedScene" uid="uid://cm8sus7ewpeui" path="res://assets/mapAssets/buildingBlocks/door/door.glb" id="3_3r7ne"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4dew"]
-render_priority = 0
-shader = ExtResource("2_ypub0")
-shader_parameter/ambientMat = Color(1, 1, 1, 1)
-shader_parameter/diffuseMat = Color(1, 1, 1, 1)
-shader_parameter/specularMat = Color(1, 1, 1, 1)
-shader_parameter/shininess = 200.0
-shader_parameter/uBumpStrength = 2.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_umnb1"]
-material = SubResource("ShaderMaterial_g4dew")
-size = Vector3(3, 3, 0.3)
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4dew"]
+size = Vector3(0.3, 3.5, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cycew"]
-size = Vector3(3, 3, 0.3)
+size = Vector3(3, 4, 0.18)
 
 [node name="Door" type="StaticBody3D" unique_id=1253411669 groups=["Door"]]
 script = ExtResource("1_mspgx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1033317306]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-layers = 16
-mesh = SubResource("BoxMesh_umnb1")
+[node name="door_frame" parent="." unique_id=131353920 instance=ExtResource("2_g4dew")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2045535489]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1517003276]
+transform = Transform3D(1.1999998, 0, 0, 0, 1.1999998, 0, 0, 0, 1.1999998, -1.3799998, 2.1000001, 0)
+shape = SubResource("BoxShape3D_g4dew")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1613714651]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 1.3799999, 2.1000001, 0)
+shape = SubResource("BoxShape3D_g4dew")
+
+[node name="DoorPivot" type="StaticBody3D" parent="." unique_id=2131275866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1642799, 0.30089116, 0)
+
+[node name="door" parent="DoorPivot" unique_id=908868611 instance=ExtResource("3_3r7ne")]
+transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, -1.1642799, -0.30089116, 0)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="DoorPivot" unique_id=2045535489]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -1.1642799, 1.799109, 0)
 shape = SubResource("BoxShape3D_cycew")

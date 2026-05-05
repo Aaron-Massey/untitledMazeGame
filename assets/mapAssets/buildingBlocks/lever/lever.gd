@@ -9,7 +9,7 @@ const LEVER_BOUNDS: Vector2 = Vector2(-35.0, 35.0)
 
 var _tween: Tween
 
-@onready var lever_pivot: Node3D = $Base/ArmPivot
+@onready var lever_pivot: Node3D = $lever_base/ArmPivot
 
 
 func interact() -> void:
